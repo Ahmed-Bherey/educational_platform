@@ -185,6 +185,12 @@ header .logo{
 .subjects .sub_subject img{
     max-width: 100%;
 }
+.subjects .sub_subject img{
+    min-height: 253px;
+    max-height: 253px;
+    min-width: 100%;
+    max-width: 100%;
+}
 .subjects .main_subject .main_subject_content .main_subject_content_title,
 .subjects .sub_subject .subject_box_content .main_subject_content_title{
     color: var(--head);
@@ -321,6 +327,12 @@ footer{
     -moz-border-radius: 15px 15px 0 0;
     -ms-border-radius: 15px 15px 0 0;
     -o-border-radius: 15px 15px 0 0;
+}
+.subject_all .subject_all_box .subject__all_box_content .subject__all_img img{
+    min-height: 320px;
+    max-height: 320px;
+    min-width: 100%;
+    max-width: 100%;
 }
 .subject_all .subject_all_box .subject__all_box_content .subject__all_title{
     background-color: var(--white);

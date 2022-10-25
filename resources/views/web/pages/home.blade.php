@@ -9,7 +9,7 @@
                             <div class="row">
                                 <div class="col-12 col-md-6 leatest_img">
                                     <div class="img">
-                                        <img src="{{asset('public/web/img/l1.jpg')}}" alt="">
+                                        <img src="{{ asset('public/web/img/l1.jpg') }}" alt="">
                                     </div>
                                     <div class="col-12 col-md-6 leatest_content text-center position-absolute">
                                         <p>
@@ -26,7 +26,7 @@
                             <div class="row">
                                 <div class="col-12 col-md-6 leatest_img">
                                     <div class="img">
-                                        <img src="{{asset('public/web/img/l1.jpg')}}" alt="">
+                                        <img src="{{ asset('public/web/img/l1.jpg') }}" alt="">
                                     </div>
                                     <div class="col-12 col-md-6 leatest_content text-center position-absolute">
                                         <p>
@@ -63,75 +63,34 @@
                         <a href="#" class="btn_sub">مشاهدة الان</a>
                     </div>
                     <div class="col-12 col-lg-6 main_subject_img">
-                        <img src="{{asset('public/web/img/s1.jpg')}}" alt="">
+                        <img src="{{ asset('public/web/img/s1.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
             <div class="sub_subject">
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 subject_box">
-                        <div class="subject_box_img">
-                            <img src="{{asset('public/web/img/s2.jpg')}}" alt="">
+                    @foreach ($categories as $key => $category)
+                        <div class="col-12 col-md-6 col-lg-4 subject_box">
+                            <div class="subject_box_img">
+                                <img src="{{ asset('/public/' . Storage::url($category->img)) }}" alt="">
+                            </div>
+                            <div class="subject_box_content">
+                                <a href="{{route('web.subjects',$category->id)}}" class="text-decoration-none">
+                                    <h1 class="main_subject_content_title mb-3">{{ $category->name }}</h1>
+                                    <div class="head_title mb-5">
+                                        <ul>
+                                            @foreach (\App\Models\CategoryTotal::where('category_id', $category->id)->get() as $categorydesc)
+                                                <li><span>{{ $categorydesc->desc }}</span><i
+                                                        class="fa-solid fa-circle-check"></i>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </a>
+                                <a href="{{route('web.subjects',$category->id)}}" class="btn_sub">مشاهدة الان</a>
+                            </div>
                         </div>
-                        <div class="subject_box_content">
-                            <a href="#" class="text-decoration-none">
-                                <h1 class="main_subject_content_title mb-3">التاريخ الاسلامى</h1>
-                                <div class="head_title mb-5">
-                                    <ul>
-                                        <li><span>مجتمع تعليمى متكامل</span><i class="fa-solid fa-circle-check"></i>
-                                        </li>
-                                        <li><span>محتوى عالى الدقة</span><i class="fa-solid fa-circle-check"></i>
-                                        </li>
-                                        <li><span>متابعة احدث الابحاث</span><i class="fa-solid fa-circle-check"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                            <a href="#" class="btn_sub">مشاهدة الان</a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 subject_box">
-                        <div class="subject_box_img">
-                            <img src="{{asset('public/web/img/s3.jpg')}}" alt="">
-                        </div>
-                        <div class="subject_box_content">
-                            <a href="#" class="text-decoration-none">
-                                <h1 class="main_subject_content_title mb-3">الفلسفة</h1>
-                                <div class="head_title mb-5">
-                                    <ul>
-                                        <li><span>مجتمع تعليمى متكامل</span><i class="fa-solid fa-circle-check"></i>
-                                        </li>
-                                        <li><span>محتوى عالى الدقة</span><i class="fa-solid fa-circle-check"></i>
-                                        </li>
-                                        <li><span>متابعة احدث الابحاث</span><i class="fa-solid fa-circle-check"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                            <a href="#" class="btn_sub">مشاهدة الان</a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 subject_box">
-                        <div class="subject_box_img">
-                            <img src="{{asset('public/web/img/s4.jpg')}}" alt="">
-                        </div>
-                        <div class="subject_box_content">
-                            <a href="#" class="text-decoration-none">
-                                <h1 class="main_subject_content_title mb-3">جغرافيا جيوسياسية</h1>
-                                <div class="head_title mb-5">
-                                    <ul>
-                                        <li><span>مجتمع تعليمى متكامل</span><i class="fa-solid fa-circle-check"></i>
-                                        </li>
-                                        <li><span>محتوى عالى الدقة</span><i class="fa-solid fa-circle-check"></i>
-                                        </li>
-                                        <li><span>متابعة احدث الابحاث</span><i class="fa-solid fa-circle-check"></i>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </a>
-                            <a href="#" class="btn_sub">مشاهدة الان</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

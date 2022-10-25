@@ -24,5 +24,5 @@ Route::controller(LoginController::class)->group(function(){
 // home
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'index')->name('web.index');
-    Route::get('/subjects', 'subjects')->name('web.subjects');
+    Route::get('/subjects/{id}', 'subjects')->name('web.subjects');
 });

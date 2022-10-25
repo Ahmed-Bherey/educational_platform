@@ -5,10 +5,11 @@
         </div>
         <ul>
             <li><a href="#">مدرسونا</a></li>
-            <li><a href="{{ route('web.subjects') }}">التصنيفات</a>
+            <li><a href="#">التصنيفات</a>
                 <ul class="position-absolute text-center">
-                    <li><a href="#">34ty34y3</a></li>
-                    <li><a href="#">3y4utyik</a></li>
+                    @foreach ($categories as $category)
+                    <li><a href="{{route('web.subjects',$category->id)}}">{{$category->name}}</a></li>
+                    @endforeach
                 </ul>
             </li>
             <li><a href="{{ route('web.index') }}">الرئيسية</a></li>

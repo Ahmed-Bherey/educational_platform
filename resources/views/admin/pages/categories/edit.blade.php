@@ -63,9 +63,12 @@
                                                                 value="{{ $categoryTotal->desc }}" id="desc"
                                                                 placeholder="الوصف" name="data[desc][]">
                                                         </td>
-                                                        <td>
+                                                        <td class="d-flex justify-content-center">
                                                             <button type="button" class="btn bg-success" id="add">
                                                                 <i class="fas fa-plus-square"></i>
+                                                            </button>
+                                                            <button type="button" class="btn bg-danger" onclick='delet(this)'>
+                                                                <i class="fas fa-trash-alt text-light"></i>
                                                             </button>
                                                         </td>
                                                     </tr>
