@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id')->nullable();
             $table->string('name')->nullable();
             $table->string('img')->nullable();
+            $table->string('video')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');

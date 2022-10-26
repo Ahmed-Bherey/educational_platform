@@ -16,6 +16,7 @@ class Subject extends Model
         'category_id',
         'name',
         'img',
+        'video',
     ];
 
     public function users()

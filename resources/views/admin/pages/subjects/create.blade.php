@@ -49,6 +49,12 @@
                                             <label for="img" class="col-form-label">اضف صورة
                                             </label>
                                         </div>
+                                        <div class="col-sm-4 form-floating">
+                                            <input type="file" class="form-control" id="video" placeholder="اضف صورة"
+                                                name="video">
+                                            <label for="video" class="col-form-label">اضف فيديو الشرح
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->

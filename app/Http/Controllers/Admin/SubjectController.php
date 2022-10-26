@@ -24,12 +24,18 @@ class SubjectController extends Controller
         if (isset($request->img)) {
             $img = $request->img->store('public/img/subjects');
         }
+
+        $video = null;
+        if (isset($request->video)) {
+            $video = $request->video->store('public/img/subjects');
+        }
         Subject::create([
             'user_id' => Auth::user()->id,
             'date' => $request->date,
             'category_id' => $request->category_id,
             'name' => $request->name,
             'img' => $img,
+            'video' => $video,
         ]);
         return redirect()->back()->with(['success' => "تم الحفظ بنجاح"]);
     }
@@ -48,12 +54,18 @@ class SubjectController extends Controller
         if (isset($request->img)) {
             $img = $request->img->store('public/img/subjects');
         }
+
+        $video = $subject->video;
+        if (isset($request->video)) {
+            $video = $request->video->store('public/img/subjects');
+        }
         $subject->update([
             'user_id' => Auth::user()->id,
             'date' => $request->date,
             'category_id' => $request->category_id,
             'name' => $request->name,
             'img' => $img,
+            'video' => $video,
         ]);
         return redirect()->route('subject.create')->with(['success' => "تم التحديث بنجاح"]);
     }

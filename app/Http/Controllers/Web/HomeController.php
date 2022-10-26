@@ -24,6 +24,7 @@ class HomeController extends Controller
         $categories = Category::get();
         $category = Category::findOrFail($id);
         $sub_subjects = Subject::where('category_id',$id)->get();
-        return view('web.pages.subjects',compact('subjects','sub_subjects','category','categories'));
+        $subject_video = Subject::find($id);
+        return view('web.pages.subjects',compact('subjects','sub_subjects','category','categories','subject_video'));
     }
 }

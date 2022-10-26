@@ -49,12 +49,24 @@
                                                 <label for="img" class="col-form-label">اضف صورة
                                                 </label>
                                             </div>
+                                            <div class="col-sm-4 form-floating">
+                                                <input type="file" class="form-control" id="video"
+                                                    placeholder="اضف صورة" name="video">
+                                                <label for="video" class="col-form-label">اضف فيديو الشرح
+                                                </label>
+                                            </div>
                                         </div>
                                         {{-- row 1 --}}
                                         <div class="col-md-3">
                                             <img src="{{ asset('/public/' . Storage::url($subject->img)) }}"
                                                 style="max-width: 100%;" id="imgshow">
                                         </div>
+                                        {{-- <div class="col-md-3">
+                                            <video controls>
+                                                <source src="{{ asset('/public/' . Storage::url($subject->video)) }}" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div> --}}
                                     </div>
                                 </div>
                                 <!-- /.card-body -->

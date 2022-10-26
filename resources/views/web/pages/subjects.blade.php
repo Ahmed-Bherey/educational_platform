@@ -20,11 +20,19 @@
                                 <div class="subject__all_img imgBtn">
                                     <img src="{{ asset('/public/' . Storage::url($sub_subject->img)) }}" alt="">
                                 </div>
+                                <div class="position-absolute subject_video" id="subject_video">
+                                    <video controls>
+                                        <source src="{{ asset('/public/' . Storage::url($sub_subject->video)) }}"
+                                            type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
                                 <div class="subject__all_title position-absolute text-end">
                                     <h3 class="title fw-bold">
                                         <a href="#" class="text-decoration-none">{{ $sub_subject->name }}</a>
                                     </h3>
                                     <p class="date fw-bold">{{ $sub_subject->date }}</p>
+                                    {{ $sub_subject->name }}
                                 </div>
                             </div>
                         </div>
