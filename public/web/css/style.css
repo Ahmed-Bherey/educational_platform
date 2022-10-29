@@ -359,7 +359,9 @@ footer{
     font-size: 17px;
     color: var(--light);
 }
-
+.wrraber{
+    min-height: 60vh;
+}
 .subject_all video{
     max-width: 100%;
     border-radius: 15px;
@@ -393,4 +395,12 @@ footer{
 }
 .overflew.showOverlay{
     display: block;
+}
+
+.subject_details .subject_details_content{
+    text-align: center;
+    margin: 20px 0;
+}
+.subject_details .subject_details_content .video video{
+    width: 60%;
 }

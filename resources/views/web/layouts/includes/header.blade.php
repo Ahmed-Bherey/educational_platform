@@ -4,15 +4,17 @@
             Al-Education
         </div>
         <ul>
-            <li><a href="#">مدرسونا</a></li>
-            <li><a href="#">التصنيفات</a>
+            {{-- <li><a href="#">مدرسونا</a></li> --}}
+            {{-- <li><a href="#">التصنيفات</a>
                 <ul class="position-absolute text-center">
                     @foreach ($categories as $category)
                     <li><a href="{{route('web.subjects',$category->id)}}">{{$category->name}}</a></li>
                     @endforeach
                 </ul>
-            </li>
-            <li><a href="{{ route('web.index') }}">الرئيسية</a></li>
+            </li> --}}
+            @foreach ($categories as $category)
+            <li><a href="{{route('web.subjects',$category->id)}}">{{$category->name}}</a></li>
+            @endforeach
             <li><a href="{{ route('login.form') }}">تسجيل الدخول</a></li>
         </ul>
     </nav>

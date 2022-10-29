@@ -6,7 +6,7 @@ var swiper = new Swiper(".mySwiper", {
 
 let imgBtn = document.querySelectorAll('.imgBtn'),
     overlay = document.querySelector('#overflew'),
-    video = document.querySelector('#subject_video')
+    video = document.querySelectorz('#subject_video')
 
 for (let i = 0; i < imgBtn.length; i++) {
     imgBtn[i].addEventListener('click',()=>{

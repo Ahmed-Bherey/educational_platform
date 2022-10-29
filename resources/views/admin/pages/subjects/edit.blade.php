@@ -20,13 +20,13 @@
                                     {{-- row 1 --}}
                                     <div class="row mb-3">
                                         <div class="col-md-9 row">
-                                            <div class="col-sm-4 form-floating">
+                                            <div class="col-sm-4 form-floating mb-3">
                                                 <input type="date" class="form-control" value="{{ $subject->date }}"
                                                     id="date" placeholder="التاريخ" name="date">
                                                 <label for="date" class="col-form-label">التاريخ
                                                 </label>
                                             </div>
-                                            <div class="col-sm-4 form-floating">
+                                            <div class="col-sm-4 form-floating mb-3">
                                                 <select required="required" class="form-control" name="category_id"
                                                     id="category_id">
                                                     <option value="">اختر التصنيف</option>
@@ -44,13 +44,29 @@
                                                 <label for="name" class="col-form-label">اسم الدرس</label>
                                             </div>
                                             <div class="col-sm-4 form-floating">
-                                                <input type="file" class="form-control" id="img"
+                                                <div class="heading d-flex" id="btn_img">
+                                                    <div class="icon"><i class="fa-regular fa-image"></i></div>
+                                                    <div class="heading_div" id="auther">
+                                                        اضف صورة
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 form-floating" hidden>
+                                                <input type="file" class="form-control" id="upload_img"
                                                     placeholder="اضف صورة" name="img">
                                                 <label for="img" class="col-form-label">اضف صورة
                                                 </label>
                                             </div>
                                             <div class="col-sm-4 form-floating">
-                                                <input type="file" class="form-control" id="video"
+                                                <div class="heading d-flex" id="btn_file">
+                                                    <div class="icon"><i class="fa-regular fa-circle-play"></i></div>
+                                                    <div class="heading_div" id="auther">
+                                                        اضف فيديو الشرح
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 form-floating" hidden>
+                                                <input type="file" class="form-control" id="upload_book"
                                                     placeholder="اضف صورة" name="video">
                                                 <label for="video" class="col-form-label">اضف فيديو الشرح
                                                 </label>
@@ -86,4 +102,18 @@
             </div>
         </div>
     </div>
+    <script>
+        let btnImg = document.getElementById('btn_img'),
+            btnFile = document.getElementById('btn_file'),
+            imgFile = document.getElementById('upload_img'),
+            bookFile = document.getElementById('upload_book');
+
+        btnImg.addEventListener('click', () => {
+            imgFile.click()
+        })
+
+        btnFile.addEventListener('click', () => {
+            bookFile.click()
+        })
+    </script>
 @endsection

@@ -27,4 +27,11 @@ class HomeController extends Controller
         $subject_video = Subject::find($id);
         return view('web.pages.subjects',compact('subjects','sub_subjects','category','categories','subject_video'));
     }
+
+    public function subject_details($id)
+    {
+        $categories = Category::get();
+        $subject = Subject::find($id);
+        return view('web.pages.subject_details',compact('subject','categories'));
+    }
 }

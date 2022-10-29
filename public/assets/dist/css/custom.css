@@ -637,3 +637,19 @@ textarea {
 
 
 /* end student exam style*/
+
+.heading {
+    height: 35px;
+    line-height: 35px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.heading .icon {
+    width: 15%;
+    font-size: 20px;
+    background-color: #444345;
+}
+.heading .heading_div {
+    width: 85%;
+    background-color: #f47521;
+}

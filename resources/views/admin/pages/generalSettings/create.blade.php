@@ -87,10 +87,18 @@
                                                 <label for="address" class="col-sm-4 col-form-label"> عنوان
                                                     الشركة </label>
                                             </div>
-                                            <div class="col-md-6 form-floating">
-                                                <input type="file" class="form-control" id="name"
+                                            <div class="col-md-6 form-floating" hidden>
+                                                <input type="file" class="form-control" id="upload_img"
                                                     placeholder="لوجو الموقع" name="logo">
                                                 <label for="site" class="col-sm-4 col-form-label">لوجو الموقع</label>
+                                            </div>
+                                            <div class="col-md-6 form-floating">
+                                                <div class="heading d-flex" id="btn_img">
+                                                    <div class="icon"><i class="fa-regular fa-image"></i></div>
+                                                    <div class="heading_div" id="auther">
+                                                        لوجو الموقع
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col-sm-6 mt-3 form-floating">
                                                 <textarea class="form-control" rows="3" id="note" placeholder="الرؤية ..." name="vision">
@@ -128,4 +136,12 @@
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    <script>
+        let btnImg = document.getElementById('btn_img'),
+            imgFile = document.getElementById('upload_img');
+
+        btnImg.addEventListener('click', () => {
+            imgFile.click()
+        })
+    </script>
 @endsection

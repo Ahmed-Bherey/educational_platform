@@ -44,14 +44,30 @@
                                     {{-- row 1 --}}
                                     <div class="row mb-3">
                                         <div class="col-sm-4 form-floating">
-                                            <input type="file" class="form-control" id="img" placeholder="اضف صورة"
-                                                name="img">
+                                            <div class="heading d-flex" id="btn_img">
+                                                <div class="icon"><i class="fa-regular fa-image"></i></div>
+                                                <div class="heading_div" id="auther">
+                                                    اضف صورة
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 form-floating" hidden>
+                                            <input type="file" class="form-control" id="upload_img"
+                                                placeholder="اضف صورة" name="img">
                                             <label for="img" class="col-form-label">اضف صورة
                                             </label>
                                         </div>
                                         <div class="col-sm-4 form-floating">
-                                            <input type="file" class="form-control" id="video" placeholder="اضف صورة"
-                                                name="video">
+                                            <div class="heading d-flex" id="btn_file">
+                                                <div class="icon"><i class="fa-regular fa-circle-play"></i></div>
+                                                <div class="heading_div" id="auther">
+                                                    اضف فيديو الشرح
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 form-floating" hidden>
+                                            <input type="file" class="form-control" id="upload_book"
+                                                placeholder="اضف صورة" name="video">
                                             <label for="video" class="col-form-label">اضف فيديو الشرح
                                             </label>
                                         </div>
@@ -132,4 +148,18 @@
             </div>
         </div>
     </div>
+    <script>
+        let btnImg = document.getElementById('btn_img'),
+            btnFile = document.getElementById('btn_file'),
+            imgFile = document.getElementById('upload_img'),
+            bookFile = document.getElementById('upload_book');
+
+        btnImg.addEventListener('click', () => {
+            imgFile.click()
+        })
+
+        btnFile.addEventListener('click', () => {
+            bookFile.click()
+        })
+    </script>
 @endsection

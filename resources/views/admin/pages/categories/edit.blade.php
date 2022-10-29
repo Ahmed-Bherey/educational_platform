@@ -32,7 +32,15 @@
                                                 <label for="name" class="col-form-label n_ro3ya">اسم التصنيف</label>
                                             </div>
                                             <div class="col-sm-4 form-floating">
-                                                <input type="file" class="form-control" id="img"
+                                                <div class="heading d-flex" id="btn_img">
+                                                    <div class="icon"><i class="fa-regular fa-image"></i></div>
+                                                    <div class="heading_div" id="auther">
+                                                        اضف صورة
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 form-floating" hidden>
+                                                <input required type="file" class="form-control" id="upload_img"
                                                     placeholder="صورة التصنيف" name="img">
                                                 <label for="img" class="col-form-label n_ro3ya">صورة التصنيف</label>
                                             </div>
@@ -96,6 +104,14 @@
         </div>
         <!-- /.content-header -->
     </div>
+    <script>
+        let btnImg = document.getElementById('btn_img'),
+            imgFile = document.getElementById('upload_img');
+
+        btnImg.addEventListener('click', () => {
+            imgFile.click()
+        })
+    </script>
 
     <script>
         let add = document.getElementById('add'),
