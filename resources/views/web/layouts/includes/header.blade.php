@@ -15,7 +15,12 @@
             @foreach ($categories as $category)
             <li><a href="{{route('web.subjects',$category->id)}}">{{$category->name}}</a></li>
             @endforeach
-            <li><a href="{{ route('login.form') }}">تسجيل الدخول</a></li>
+            <li><a href="{{ route('web.index') }}">الرئيسية</a></li>
+            @if(Auth::guard('member') == true)
+            <li><a href="{{ route('user.logout') }}">تسجيل خروج</a></li>
+            @else
+            <li><a href="{{ route('user.login.form') }}">تسجيل الدخول</a></li>
+            @endif
         </ul>
     </nav>
 </div>
