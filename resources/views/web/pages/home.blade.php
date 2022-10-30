@@ -2,7 +2,7 @@
 @section('content')
     @include('admin.layouts.alerts.success')
     @include('admin.layouts.alerts.error')
-    <section class="leatest position-relative">
+    {{-- <section class="leatest position-relative">
         <div class="container">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
@@ -30,6 +30,60 @@
                     @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section> --}}
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box">
+                    <div class="cat_box_content">
+                        <div class="main_cat">
+                            <a href="#" class="btn">التربية المدنية</a>
+                        </div>
+                        <div class="sub_cat">
+                            <a href="#" class="btn">الحوار المدنى</a>
+                            <a href="#" class="btn">الحوار المدنى</a>
+                            <a href="#" class="btn">الحوار المدنى</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box">
+                    <div class="cat_box_content">
+                        <div class="main_cat">
+                            <a href="#" class="btn">الفلسفة</a>
+                        </div>
+                        <div class="sub_cat">
+                            <a href="#" class="btn">الحوار المدنى</a>
+                            <a href="#" class="btn">الحوار المدنى</a>
+                            <a href="#" class="btn">الحوار المدنى</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box">
+                    <div class="cat_box_content">
+                        <div class="main_cat">
+                            <a href="#" class="btn">التربية المدنية</a>
+                        </div>
+                        <div class="sub_cat">
+                            <a href="#" class="btn">الحوار المدنى</a>
+                            <a href="#" class="btn">الحوار المدنى</a>
+                            <a href="#" class="btn">الحوار المدنى</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box">
+                    <div class="cat_box_content">
+                        <div class="main_cat">
+                            <a href="#" class="btn">التربية المدنية</a>
+                        </div>
+                        <div class="sub_cat">
+                            <a href="#" class="btn">الحوار المدنى</a>
+                            <a href="#" class="btn">الحوار المدنى</a>
+                            <a href="#" class="btn">الحوار المدنى</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
