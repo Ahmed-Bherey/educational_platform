@@ -16,7 +16,7 @@
             <li><a href="{{route('web.subjects',$category->id)}}">{{$category->name}}</a></li>
             @endforeach
             <li><a href="{{ route('web.index') }}">الرئيسية</a></li>
-            @if(Auth::guard('member') == true)
+            @if(Auth('member')->check())
             <li><a href="{{ route('user.logout') }}">تسجيل خروج</a></li>
             @else
             <li><a href="{{ route('user.login.form') }}">تسجيل الدخول</a></li>

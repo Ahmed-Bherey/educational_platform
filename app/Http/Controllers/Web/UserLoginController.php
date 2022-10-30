@@ -32,7 +32,8 @@ class UserLoginController extends Controller
 
     public function logout()
     {
-        Auth::guard('member')->logout();
+        // dd(auth()->guard('member'));
+        auth()->guard('member')->logout();
         Session::forget('yourKeyGoesHere');
         session()->regenerate();
         Artisan::call('cache:clear');

@@ -37,8 +37,8 @@
                 {{-- <p class="text-mute"> <a href="$">هل نسيت كلمة المرور؟</a></p> --}}
             </main>
             <div class="col-12  col-md-6 ">
-                <img src="{{ asset('public/admin/dist/img/nagez-final-22.png') }}" alt="nagezSoft" title="nagezSoft"
-                    class="w-100">
+                <img src="{{ asset('public/web/title.png') }}" alt="nagezSoft" title="nagezSoft"
+                    style="max-width: 100%">
             </div>
         </div>
     </div>
