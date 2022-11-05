@@ -35,59 +35,27 @@
     </section> --}}
     <section class="categories">
         <div class="container">
+            <h2 class="text-right fw-bold mb-4 text-primary">التصنيفات</h2>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box">
-                    <div class="cat_box_content">
-                        <div class="main_cat">
-                            <a href="#" class="btn">التربية المدنية</a>
-                        </div>
-                        <div class="sub_cat">
-                            <a href="#" class="btn">الحوار المدنى</a>
-                            <a href="#" class="btn">الحوار المدنى</a>
-                            <a href="#" class="btn">الحوار المدنى</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box">
-                    <div class="cat_box_content">
-                        <div class="main_cat">
-                            <a href="#" class="btn">الفلسفة</a>
-                        </div>
-                        <div class="sub_cat">
-                            <a href="#" class="btn">الحوار المدنى</a>
-                            <a href="#" class="btn">الحوار المدنى</a>
-                            <a href="#" class="btn">الحوار المدنى</a>
+                @foreach ($categoriesAll as $key => $category)
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box">
+                        <div class="cat_box_content">
+                            <div class="main_cat">
+                                <p class="btn">{{ $category->name }}</p>
+                            </div>
+                            <div class="sub_cat">
+                                @foreach (\App\Models\SubCategory::where('category_id', $category->id)->get() as $subCategory)
+                                    <a href="{{ route('sub_cat_subjects', $subCategory->id) }}"
+                                        class="btn">{{ $subCategory->name }}</a>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box">
-                    <div class="cat_box_content">
-                        <div class="main_cat">
-                            <a href="#" class="btn">التربية المدنية</a>
-                        </div>
-                        <div class="sub_cat">
-                            <a href="#" class="btn">الحوار المدنى</a>
-                            <a href="#" class="btn">الحوار المدنى</a>
-                            <a href="#" class="btn">الحوار المدنى</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box">
-                    <div class="cat_box_content">
-                        <div class="main_cat">
-                            <a href="#" class="btn">التربية المدنية</a>
-                        </div>
-                        <div class="sub_cat">
-                            <a href="#" class="btn">الحوار المدنى</a>
-                            <a href="#" class="btn">الحوار المدنى</a>
-                            <a href="#" class="btn">الحوار المدنى</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
-    <section class="subjects">
+    {{-- <section class="subjects">
         <div class="container">
             <div class="main_subject mb-3">
                 <div class="row gx-0">
@@ -137,5 +105,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection

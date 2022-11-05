@@ -78,6 +78,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{route('subCategory.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>اضافة تصنيف فرعى</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('subject.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon green-1"></i>
                                 <p>اضافة دروس</p>

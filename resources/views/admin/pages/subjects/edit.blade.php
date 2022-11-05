@@ -29,14 +29,27 @@
                                             <div class="col-sm-4 form-floating mb-3">
                                                 <select required="required" class="form-control" name="category_id"
                                                     id="category_id">
-                                                    <option value="">اختر التصنيف</option>
+                                                    <option value="">اختر التصنيف الرئيسى</option>
                                                     @foreach ($categories as $key => $category)
                                                         <option value="{{ $category->id }}"
                                                             @if ($subject->category_id == $category->id) selected @endif>
                                                             {{ $category->name }}</option>
                                                     @endforeach
                                                 </select>
-                                                <label for="category_id" class="col-form-label">اختر التصنيف</label>
+                                                <label for="category_id" class="col-form-label">اختر التصنيف الرئيسى</label>
+                                            </div>
+                                            <div class="col-sm-4 form-floating">
+                                                <select required="required" class="form-control" name="subCategory_id"
+                                                    id="subCategory_id">
+                                                    <option value="">اختر التصنيف الفرعى</option>
+                                                    @foreach ($subCategories as $key => $subCategory)
+                                                        <option value="{{ $subCategory->id }}"
+                                                            @if ($subject->subCategory_id == $subCategory->id) selected @endif>
+                                                            {{ $subCategory->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <label for="subCategory_id" class="col-form-label">اختر التصنيف
+                                                    الفرعى</label>
                                             </div>
                                             <div class="col-sm-4 form-floating">
                                                 <input type="text" class="form-control" value="{{ $subject->name }}"
@@ -116,4 +129,37 @@
             bookFile.click()
         })
     </script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('select[name="category_id"]').on('change', function() {
+            var stateID = $(this).val();
+            var csrf = $('meta[name="csrf-token"]').attr('content');
+            var route = '{{ route('category.ajax', ['id' => ':id']) }}';
+            route = route.replace(':id', stateID);
+            if (stateID) {
+                $.ajax({
+                    beforeSend: function(x) {
+                        return x.setRequestHeader('X-CSRF-TOKEN', csrf);
+                    },
+                    url: route,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        $('#subCategory_id').empty();
+                        $.each(data, function(key, value) {
+                            $('#subCategory_id').append($(`<option>`, {
+                                value: value.id,
+                                text: value.name,
+                            }));
+                        });
+                        $('#subCategory_id').trigger('change');
+                    }
+                });
+            } else {
+                $('select[name="subCategory_id"]').empty();
+            }
+        });
+    });
+</script>
 @endsection

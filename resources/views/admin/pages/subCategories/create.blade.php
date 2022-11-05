@@ -9,11 +9,11 @@
                     <div class="col-sm-12 col-lg-12">
                         <div class="card">
                             <div class="card-header header-bg">
-                                <h3 class="card-title header-title">اضافة درس</h3>
+                                <h3 class="card-title header-title">اضافة تصنيف فرعى</h3>
                             </div>
                             @include('admin.layouts.alerts.success')
                             @include('admin.layouts.alerts.error')
-                            <form class="form-horizontal" action="{{ route('subject.store') }}" method="POST"
+                            <form class="form-horizontal" action="{{ route('subCategory.store') }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
@@ -26,8 +26,7 @@
                                             </label>
                                         </div>
                                         <div class="col-sm-4 form-floating mb-3">
-                                            <select required="required" class="form-control" name="category_id"
-                                                id="category_id">
+                                            <select required class="form-control" name="category_id" id="category_id">
                                                 <option value="">اختر التصنيف الرئيسى</option>
                                                 @foreach ($categories as $key => $category)
                                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -36,23 +35,10 @@
                                             <label for="category_id" class="col-form-label">اختر التصنيف الرئيسى</label>
                                         </div>
                                         <div class="col-sm-4 form-floating mb-3">
-                                            <select required="required" class="form-control" name="subCategory_id"
-                                                id="subCategory_id">
-                                                <option value="">اختر التصنيف الفرعى</option>
-                                                @foreach ($subCategories as $key => $subCategory)
-                                                    <option value="{{ $subCategory->id }}">{{ $subCategory->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            <label for="subCategory_id" class="col-form-label">اختر التصنيف الفرعى</label>
+                                            <input type="text" class="form-control" id="name" placeholder="الاسم"
+                                                name="name" required>
+                                            <label for="name" class="col-sm-3 col-form-label">الاسم</label>
                                         </div>
-                                        <div class="col-sm-4 form-floating mb-3">
-                                            <input type="text" class="form-control" id="name"
-                                                placeholder="اسم الدرس" name="name">
-                                            <label for="name" class="col-form-label">اسم الدرس</label>
-                                        </div>
-                                    </div>
-                                    {{-- row 1 --}}
-                                    <div class="row mb-3">
                                         <div class="col-sm-4 form-floating mb-3">
                                             <div class="heading d-flex" id="btn_img">
                                                 <div class="icon"><i class="fa-regular fa-image"></i></div>
@@ -68,17 +54,8 @@
                                             </label>
                                         </div>
                                         <div class="col-sm-4 form-floating mb-3">
-                                            <div class="heading d-flex" id="btn_file">
-                                                <div class="icon"><i class="fa-regular fa-circle-play"></i></div>
-                                                <div class="heading_div" id="auther">
-                                                    اضف فيديو الشرح
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4 form-floating mb-3" hidden>
-                                            <input type="file" class="form-control" id="upload_book"
-                                                placeholder="اضف صورة" name="video">
-                                            <label for="video" class="col-form-label">اضف فيديو الشرح
+                                            <textarea class="form-control" rows="1" placeholder="ملاحظات ..." name="notes" id="note"></textarea>
+                                            <label for="note" class="col-form-label">ملاحظات
                                             </label>
                                         </div>
                                     </div>
@@ -97,12 +74,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-1">
-                    <div class="col-sm-12 col-md-12  col-lg-12 col-xl-12">
+                {{-- start card table --}}
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title" style="float:right; font-weight:bold;">الدروس
-                                </h3>
+                                <h3 class="card-title" style="float:right; font-weight:bold;">التصنيفات الفرعية</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -116,30 +93,31 @@
                                                     <tr>
                                                         <td>#</td>
                                                         <td>التاريخ</td>
-                                                        <td>التصنيف</td>
-                                                        <td>الدرس</td>
+                                                        <td>التصنيف الرئيسى</td>
+                                                        <td>الاسم</td>
                                                         <td>الصورة</td>
+                                                        <td>ملاحظات</td>
                                                         <td>عمليات</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($subjects as $key => $subject)
+                                                    @foreach ($subCategories as $key => $subCategory)
                                                         <tr class="odd">
                                                             <td>{{ $loop->iteration }}</td>
-                                                            <td>{{ $subject->date }}</td>
-                                                            <td>{{ $subject->categories->name }}</td>
-                                                            <td>{{ $subject->name }}</td>
+                                                            <td>{{ $subCategory->date }}</td>
+                                                            <td>{{ $subCategory->categories->name }}</td>
+                                                            <td>{{ $subCategory->name }}</td>
                                                             <td>
-                                                                <img src="{{ asset('/public/' . Storage::url($subject->img)) }}"
+                                                                <img src="{{ asset('/public/' . Storage::url($subCategory->img)) }}"
                                                                     id="imgshow" height="50vh">
                                                             </td>
+                                                            <td>{{ $subCategory->notes }}</td>
                                                             <td>
-                                                                <a href="{{ route('subject.edit', $subject->id) }}"
+                                                                <a href="{{ route('subCategory.edit', $subCategory->id) }}"
                                                                     type="submit" class="btn bg-secondary"><i
                                                                         class="far fa-edit" aria-hidden="true"></i></a>
-                                                                <a href="{{ route('subject.destroy', $subject->id) }}"
-                                                                    type="submit"
-                                                                    onclick="return confirm('Are you sure?')"
+                                                                <a href="{{ route('subCategory.destroy', $subCategory->id) }}"
+                                                                    type="submit" onclick="return confirm('Are you sure?')"
                                                                     class="btn btn-danger"><i
                                                                         class="fas fa-trash-alt"></i></a>
                                                             </td>
@@ -151,59 +129,22 @@
                                     </div>
                                     <!-- /.card-body -->
                                 </div>
-                                {{-- end table --}}
-                            </div>
+                                {{-- end card table --}}
+                            </div><!-- /.container-fluid -->
                         </div>
                     </div>
                 </div>
-            </div>
+            </div><!-- /.container-fluid -->
         </div>
+        <!-- /.content-header -->
     </div>
+
     <script>
         let btnImg = document.getElementById('btn_img'),
-            btnFile = document.getElementById('btn_file'),
-            imgFile = document.getElementById('upload_img'),
-            bookFile = document.getElementById('upload_book');
+            imgFile = document.getElementById('upload_img');
 
         btnImg.addEventListener('click', () => {
             imgFile.click()
         })
-
-        btnFile.addEventListener('click', () => {
-            bookFile.click()
-        })
     </script>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('select[name="category_id"]').on('change', function() {
-            var stateID = $(this).val();
-            var csrf = $('meta[name="csrf-token"]').attr('content');
-            var route = '{{ route('category.ajax', ['id' => ':id']) }}';
-            route = route.replace(':id', stateID);
-            if (stateID) {
-                $.ajax({
-                    beforeSend: function(x) {
-                        return x.setRequestHeader('X-CSRF-TOKEN', csrf);
-                    },
-                    url: route,
-                    type: "GET",
-                    dataType: "json",
-                    success: function(data) {
-                        $('#subCategory_id').empty();
-                        $.each(data, function(key, value) {
-                            $('#subCategory_id').append($(`<option>`, {
-                                value: value.id,
-                                text: value.name,
-                            }));
-                        });
-                        $('#subCategory_id').trigger('change');
-                    }
-                });
-            } else {
-                $('select[name="subCategory_id"]').empty();
-            }
-        });
-    });
-</script>
 @endsection

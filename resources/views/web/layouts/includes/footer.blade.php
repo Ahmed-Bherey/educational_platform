@@ -23,9 +23,21 @@
                     <span>تواصل</span>
                 </h4>
                 <div class="box_content">
-                    <div class="tel"><i class="fa-solid fa-phone"></i> <span>{{ $generalSetting->tel1 }}</span></div>
-                    <div class="tel"><i class="fa-solid fa-phone"></i> <span>{{ $generalSetting->tel2 }}</span></div>
-                    <div class="tel"><i class="fa-solid fa-phone"></i> <span>{{ $generalSetting->tel3 }}</span></div>
+                    <div class="tel"><i class="fa-solid fa-phone"></i> <span>
+                            @isset($generalSetting->tel1)
+                                {{ $generalSetting->tel1 }}
+                            @endisset
+                        </span></div>
+                    <div class="tel"><i class="fa-solid fa-phone"></i> <span>
+                            @isset($generalSetting->tel2)
+                                {{ $generalSetting->tel2 }}
+                            @endisset
+                        </span></div>
+                    <div class="tel"><i class="fa-solid fa-phone"></i> <span>
+                            @isset($generalSetting->tel3)
+                                {{ $generalSetting->tel3 }}
+                            @endisset
+                        </span></div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 footer_box">

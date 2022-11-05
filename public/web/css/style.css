@@ -466,13 +466,14 @@ footer {
     margin: 50px 0;
 }
 
-.categories .cat_box .cat_box_content .main_cat a {
+.categories .cat_box .cat_box_content .main_cat p {
     border: 1px solid var(--second);
     padding: 7px 50px;
     background-color: var(--main-color);
     font-weight: bold;
     color: var(--white);
     font-size: 20px;
+    margin-bottom: 0;
 }
 .categories .cat_box .cat_box_content .sub_cat a {
     padding: 0 50px;
