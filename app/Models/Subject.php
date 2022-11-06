@@ -18,6 +18,7 @@ class Subject extends Model
         'subCategory_id',
         'name',
         'img',
+        'file',
         'video',
     ];
 

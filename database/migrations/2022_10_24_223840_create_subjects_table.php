@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('subCategory_id')->nullable();
             $table->string('name')->nullable();
             $table->string('img')->nullable();
+            $table->string('file')->nullable();
             $table->string('video')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');

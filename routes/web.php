@@ -35,5 +35,6 @@ Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'index')->name('web.index');
     Route::get('/subjects/{id}', 'subjects')->name('web.subjects');
     Route::get('/subject_details/{id}', 'subject_details')->name('web.subject.details');
+    Route::get('/subject_content/{id}', 'subject_content')->name('web.subject.content');
     Route::get('/sub_cat_subjects/{id}', 'sub_cat_subjects')->name('sub_cat_subjects');
 });

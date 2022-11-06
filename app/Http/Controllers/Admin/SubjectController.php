@@ -27,6 +27,11 @@ class SubjectController extends Controller
             $img = $request->img->store('public/img/subjects');
         }
 
+        $file = null;
+        if (isset($request->file)) {
+            $file = $request->file->store('public/img/subjects');
+        }
+
         $video = null;
         if (isset($request->video)) {
             $video = $request->video->store('public/img/subjects');
@@ -38,6 +43,7 @@ class SubjectController extends Controller
             'subCategory_id' => $request->subCategory_id,
             'name' => $request->name,
             'img' => $img,
+            'file' => $file,
             'video' => $video,
         ]);
         return redirect()->back()->with(['success' => "تم الحفظ بنجاح"]);
@@ -59,6 +65,11 @@ class SubjectController extends Controller
             $img = $request->img->store('public/img/subjects');
         }
 
+        $file = $subject->file;
+        if (isset($request->file)) {
+            $file = $request->file->store('public/img/subjects');
+        }
+
         $video = $subject->video;
         if (isset($request->video)) {
             $video = $request->video->store('public/img/subjects');
@@ -70,6 +81,7 @@ class SubjectController extends Controller
             'subCategory_id' => $request->subCategory_id,
             'name' => $request->name,
             'img' => $img,
+            'file' => $file,
             'video' => $video,
         ]);
         return redirect()->route('subject.create')->with(['success' => "تم التحديث بنجاح"]);

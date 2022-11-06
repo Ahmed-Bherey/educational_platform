@@ -13,8 +13,7 @@
                         </div>
                         <a href="{{ asset('/public/' . Storage::url($subject->video)) }}" class="btn btn-info fw-bold"
                             download="{{ $subject->name }}">تحميل</a>
-                        <a href="{{ asset('/public/' . Storage::url($subject->video)) }}" class="btn btn-success fw-bold"
-                            download="{{ $subject->name }}">قراءة</a>
+                        <a href="{{ route('web.subject.content', $subject->id) }}" class="btn btn-success fw-bold">قراءة</a>
                     </div>
                 </div>
             </div>

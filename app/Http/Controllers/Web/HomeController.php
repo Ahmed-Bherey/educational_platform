@@ -44,6 +44,14 @@ class HomeController extends Controller
         return view('web.pages.subject_details',compact('subject','categories','generalSetting'));
     }
 
+    public function subject_content($id)
+    {
+        $generalSetting = GeneralSetting::first();
+        $categories = Category::get();
+        $subject = Subject::find($id);
+        return view('web.pages.subject_content',compact('subject','categories','generalSetting'));
+    }
+
     public function sub_cat_subjects($id)
     {
         $generalSetting = GeneralSetting::first();
