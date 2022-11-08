@@ -73,13 +73,13 @@ header .logo {
 
 .banner .banner_content {
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 0;
-    transform: translate(-20%, -30%);
-    -webkit-transform: translate(-20%, -30%);
-    -moz-transform: translate(-20%, -30%);
-    -ms-transform: translate(-20%, -30%);
-    -o-transform: translate(-20%, -30%);
+    transform: translate(-20%, -35%);
+    -webkit-transform: translate(-20%, -35%);
+    -moz-transform: translate(-20%, -35%);
+    -ms-transform: translate(-20%, -35%);
+    -o-transform: translate(-20%, -35%);
     width: 50%;
 }
 
