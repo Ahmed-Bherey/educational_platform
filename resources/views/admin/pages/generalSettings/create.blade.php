@@ -55,8 +55,7 @@
                                                     @isset($generalSettings)
                                                 value="{{ $generalSettings->tel1 }}" @endisset
                                                     class="form-control" id="name" placeholder="تليفون الشركة"
-                                                    name="tel1" pattern="[0-9]{11}"
-                                                    title="لابد من كتابة رقم الهاتف المكون من 11 رقم">
+                                                    name="tel1">
                                                 <label for="tel" class="col-sm-4 col-form-label"> تليفون
                                                     الشركة </label>
                                             </div>
@@ -76,6 +75,24 @@
                                                     class="form-control" id="name" placeholder="رقم تليفون اخر"
                                                     name="tel3">
                                                 <label for="tel" class="col-sm-4 col-form-label">رقم تليفون اخر
+                                                </label>
+                                            </div>
+                                            <div class="col-md-6 form-floating">
+                                                <input type="text"
+                                                    @isset($generalSettings)
+                                                value="{{ $generalSettings->facebook }}" @endisset
+                                                    class="form-control" id="facebook" placeholder="صفحة الفيس بوك"
+                                                    name="facebook">
+                                                <label for="facebook" class="col-sm-4 col-form-label">صفحة الفيس بوك
+                                                </label>
+                                            </div>
+                                            <div class="col-md-6 form-floating">
+                                                <input type="text"
+                                                    @isset($generalSettings)
+                                                value="{{ $generalSettings->twitter }}" @endisset
+                                                    class="form-control" id="twitter" placeholder="حساب تويتر"
+                                                    name="twitter">
+                                                <label for="twitter" class="col-sm-4 col-form-label">حساب تويتر
                                                 </label>
                                             </div>
                                             <div class="col-md-6 form-floating">
@@ -118,7 +135,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-3">
-                                            <img src=" @isset($generalSettings) {{ asset('/public/' . Storage::url($generalSettings->logo)) }} @endisset"
+                                            <img src=" @isset($generalSettings->logo) {{ asset('/public/' . Storage::url($generalSettings->logo)) }} @endisset"
                                                 style="max-width: 100%;" id="imgshow">
                                         </div>
                                     </div>

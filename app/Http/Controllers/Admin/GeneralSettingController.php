@@ -19,23 +19,38 @@ class GeneralSettingController extends Controller
     public function store(Request $request)
     {
         $generalSettings = GeneralSetting::first();
-        $logo = $generalSettings->logo;
         if(isset($request->logo)){
-            $logo = $request->logo->store('public/img/settings');
+            GeneralSetting::updateOrCreate([], [
+                'user_id' => Auth::user()->id,
+                'name_ar' => $request->name_ar,
+                'name_en' => $request->name_en,
+                'email' => $request->email,
+                'tel1' => $request->tel1,
+                'tel2' => $request->tel2,
+                'tel3' => $request->tel3,
+                'facebook' => $request->facebook,
+                'twitter' => $request->twitter,
+                'address' => $request->address,
+                'logo' => $request->logo->store('public/img/settings'),
+                'vision' => $request->vision,
+                'mission' => $request->mission,
+            ]);
+        }else{
+            GeneralSetting::updateOrCreate([], [
+                'user_id' => Auth::user()->id,
+                'name_ar' => $request->name_ar,
+                'name_en' => $request->name_en,
+                'email' => $request->email,
+                'tel1' => $request->tel1,
+                'tel2' => $request->tel2,
+                'tel3' => $request->tel3,
+                'facebook' => $request->facebook,
+                'twitter' => $request->twitter,
+                'address' => $request->address,
+                'vision' => $request->vision,
+                'mission' => $request->mission,
+            ]);
         }
-        GeneralSetting::updateOrCreate([], [
-            'user_id' => Auth::user()->id,
-            'name_ar' => $request->name_ar,
-            'name_en' => $request->name_en,
-            'email' => $request->email,
-            'tel1' => $request->tel1,
-            'tel2' => $request->tel2,
-            'tel3' => $request->tel3,
-            'address' => $request->address,
-            'logo' => $logo,
-            'vision' => $request->vision,
-            'mission' => $request->mission,
-        ]);
         return redirect()->back()->with(['success' => "تم الحفظ بنجاح"]);
     }
 }

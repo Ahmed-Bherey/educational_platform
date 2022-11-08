@@ -17,6 +17,8 @@ class GeneralSetting extends Model
         'tel1',
         'tel2',
         'tel3',
+        'facebook',
+        'twitter',
         'address',
         'logo',
         'vision',

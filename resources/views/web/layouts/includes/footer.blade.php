@@ -8,7 +8,7 @@
                 </h4>
                 <div class="box_content">
                     <div class="pages"><a href="{{ route('web.index') }}" class="text-decoration-none">الرئيسية</a></div>
-                    @foreach ($categories as $key => $category)
+                    @foreach ($categoriesAll as $key => $category)
                         <div class="pages col-6 ">
                             <a href="{{ route('web.subjects', $category->id) }}"
                                 class="text-decoration-none">{{ $category->name }}</a>
@@ -22,22 +22,22 @@
                     <span>تواصل</span>
                 </h4>
                 <div class="box_content">
-                    <div class="tel"><span>
+                    <div class="tel"><i class="fa-solid fa-phone-flip"></i> <span>
                             @isset($generalSetting->tel1)
                                 {{ $generalSetting->tel1 }}
-                            </span> <i class="fa-solid fa-phone"></i>
+                            </span>
                         @endisset
                     </div>
-                    <div class="tel"><span>
+                    <div class="tel"><i class="fa-solid fa-phone-flip"></i> <span>
                             @isset($generalSetting->tel2)
                                 {{ $generalSetting->tel2 }}
-                            </span> <i class="fa-solid fa-phone"></i>
+                            </span>
                         @endisset
                     </div>
-                    <div class="tel"><span>
+                    <div class="tel"><i class="fa-solid fa-phone-flip"></i> <span>
                             @isset($generalSetting->tel3)
                                 {{ $generalSetting->tel3 }}
-                            </span> <i class="fa-solid fa-phone"></i>
+                            </span>
                         @endisset
                     </div>
                 </div>
@@ -47,12 +47,12 @@
                     <span>متابعة</span>
                 </h4>
                 <div class="box_content">
-                    <div class="social"><a href="#" class="text-decoration-none">Facebook</a> <i
-                            class="fa-brands fa-facebook"></i></div>
-                    <div class="social"><a href="#" class="text-decoration-none">Twitter</a> <i
-                            class="fa-brands fa-twitter"></i></div>
-                    <div class="social"><a href="mailto:ahmed@gmail.com" class="text-decoration-none">Gmail</a> <i
-                            class="fa-regular fa-envelope"></i></div>
+                    <div class="social"><i class="fa-brands fa-facebook"></i> <a href="{{ $generalSetting->facebook }}"
+                            class="text-decoration-none">Facebook</a></div>
+                    <div class="social"><i class="fa-brands fa-twitter"></i> <a href="{{ $generalSetting->twitter }}"
+                            class="text-decoration-none">Twitter</a></div>
+                    <div class="social"><i class="fa-regular fa-envelope"></i> <a
+                            href="mailto:{{ $generalSetting->email }}" class="text-decoration-none">Gmail</a></div>
                 </div>
             </div>
         </div>

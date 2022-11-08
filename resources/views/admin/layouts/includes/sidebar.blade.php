@@ -33,7 +33,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-cogs text-green"></i>
                         <p>
@@ -42,54 +42,55 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('generalSetting.create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon green-1"></i>
-                                <p>بيانات المؤسسة</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-cogs text-green"></i>
-                                <p>
-                                    المستخدمين
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('users.create')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon green-1"></i>
-                                        <p>اضافة مستخدم</p>
-                                    </a>
-                                </li>
-                                {{-- <li class="nav-item">
-                                    <a href="{{route('roles.index')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon green-1"></i>
-                                        <p>صلاحيات المستخدمين </p>
-                                    </a>
-                                </li> --}}
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('category.create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon green-1"></i>
-                                <p>اضافة تصنيف</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('subCategory.create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon green-1"></i>
-                                <p>اضافة تصنيف فرعى</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('subject.create')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon green-1"></i>
-                                <p>اضافة دروس</p>
-                            </a>
-                        </li>
+                        
                     </ul>
+                </li> --}}
+                <li class="nav-item">
+                    <a href="{{route('generalSetting.create')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon green-1"></i>
+                        <p>بيانات المؤسسة</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon green-1"></i>
+                        <p>
+                            المستخدمين
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('users.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>اضافة مستخدم</p>
+                            </a>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a href="{{route('roles.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>صلاحيات المستخدمين </p>
+                            </a>
+                        </li> --}}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('category.create')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon green-1"></i>
+                        <p>اضافة تصنيف</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('subCategory.create')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon green-1"></i>
+                        <p>اضافة تصنيف فرعى</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('subject.create')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon green-1"></i>
+                        <p>اضافة دروس</p>
+                    </a>
                 </li>
 
             </ul>

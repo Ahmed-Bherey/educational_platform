@@ -22,6 +22,8 @@ return new class extends Migration
             $table->integer('tel1')->nullable();
             $table->integer('tel2')->nullable();
             $table->integer('tel3')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
             $table->string('address')->nullable();
             $table->string('logo')->nullable();
             $table->longText('vision')->nullable();
