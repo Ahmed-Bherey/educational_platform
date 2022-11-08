@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Web\UserLoginController;
+use App\Http\Controllers\Admin\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +34,14 @@ Route::controller(UserLoginController::class)->prefix('user')->group(function(){
 // home
 Route::controller(HomeController::class)->group(function(){
     Route::get('/', 'index')->name('web.index');
-    Route::get('/subjects/{id}', 'subjects')->name('web.subjects');
-    Route::get('/subject_details/{id}', 'subject_details')->name('web.subject.details');
-    Route::get('/subject_content/{id}', 'subject_content')->name('web.subject.content');
-    Route::get('/sub_cat_subjects/{id}', 'sub_cat_subjects')->name('sub_cat_subjects');
-});
+    // Route::middleware('auth')->group(function(){
+        Route::get('/subjects/{id}', 'subjects')->name('web.subjects');
+        Route::get('/subjectsAll', 'subjectsAll')->name('web.subjectsAll');
+        Route::get('/subject_details/{id}', 'subject_details')->name('web.subject.details');
+        Route::get('/subject_content/{id}', 'subject_content')->name('web.subject.content');
+        Route::get('/sub_cat_subjects/{id}', 'sub_cat_subjects')->name('sub_cat_subjects');
+        Route::get('/download/{id}', 'download')->name('download');
+    });
+    // Roles
+    Route::resource('roles', RoleController::class);
+// });

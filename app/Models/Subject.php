@@ -17,6 +17,7 @@ class Subject extends Model
         'category_id',
         'subCategory_id',
         'name',
+        'explain',
         'img',
         'file',
         'video',

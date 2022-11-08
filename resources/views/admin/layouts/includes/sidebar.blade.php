@@ -63,12 +63,12 @@
                                         <p>اضافة مستخدم</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                {{-- <li class="nav-item">
+                                    <a href="{{route('roles.index')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon green-1"></i>
                                         <p>صلاحيات المستخدمين </p>
                                     </a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                         <li class="nav-item">

@@ -46,7 +46,7 @@
                             <div class="sub_cat">
                                 @foreach (\App\Models\SubCategory::where('category_id', $category->id)->get() as $subCategory)
                                     <a href="{{ route('sub_cat_subjects', $subCategory->id) }}"
-                                        class="btn">{{ $subCategory->name }}</a>
+                                        class="btn mb-1">{{ $subCategory->name }}</a>
                                 @endforeach
                             </div>
                         </div>

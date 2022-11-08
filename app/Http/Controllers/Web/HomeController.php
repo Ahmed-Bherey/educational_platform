@@ -61,4 +61,20 @@ class HomeController extends Controller
         $sub_cat_subjects = Subject::where('subCategory_id',$id)->get();
         return view('web.pages.sub_cat_subjects',compact('sub_cat_subjects','sub_cat_subject','categories','generalSetting','category'));
     }
+
+    public function subjectsAll()
+    {
+        $generalSetting = GeneralSetting::first();
+        $categories = Category::get();
+        $subjects = Subject::get();
+        return view('web.pages.subjectsAll',compact('subjects','categories','generalSetting'));
+    }
+
+    public function download($id)
+    {
+        $generalSetting = GeneralSetting::first();
+        $categories = Category::get();
+        $subject = Subject::find($id);
+        return view('web.pages.download',compact('subject','categories','generalSetting'));
+    }
 }

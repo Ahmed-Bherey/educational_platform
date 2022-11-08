@@ -1,5 +1,4 @@
 </main>
-
 <footer>
     <div class="container">
         <div class="row">
@@ -23,21 +22,24 @@
                     <span>تواصل</span>
                 </h4>
                 <div class="box_content">
-                    <div class="tel"><i class="fa-solid fa-phone"></i> <span>
+                    <div class="tel"><span>
                             @isset($generalSetting->tel1)
                                 {{ $generalSetting->tel1 }}
-                            @endisset
-                        </span></div>
-                    <div class="tel"><i class="fa-solid fa-phone"></i> <span>
+                            </span> <i class="fa-solid fa-phone"></i>
+                        @endisset
+                    </div>
+                    <div class="tel"><span>
                             @isset($generalSetting->tel2)
                                 {{ $generalSetting->tel2 }}
-                            @endisset
-                        </span></div>
-                    <div class="tel"><i class="fa-solid fa-phone"></i> <span>
+                            </span> <i class="fa-solid fa-phone"></i>
+                        @endisset
+                    </div>
+                    <div class="tel"><span>
                             @isset($generalSetting->tel3)
                                 {{ $generalSetting->tel3 }}
-                            @endisset
-                        </span></div>
+                            </span> <i class="fa-solid fa-phone"></i>
+                        @endisset
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 footer_box">
@@ -45,12 +47,12 @@
                     <span>متابعة</span>
                 </h4>
                 <div class="box_content">
-                    <div class="social"><i class="fa-brands fa-facebook"></i> <a href="#"
-                            class="text-decoration-none">Facebook</a></div>
-                    <div class="social"><i class="fa-brands fa-twitter"></i> <a href="#"
-                            class="text-decoration-none">Twitter</a></div>
-                    <div class="social"><i class="fa-regular fa-envelope"></i> <a href="mailto:ahmed@gmail.com"
-                            class="text-decoration-none">Gmail</a></div>
+                    <div class="social"><a href="#" class="text-decoration-none">Facebook</a> <i
+                            class="fa-brands fa-facebook"></i></div>
+                    <div class="social"><a href="#" class="text-decoration-none">Twitter</a> <i
+                            class="fa-brands fa-twitter"></i></div>
+                    <div class="social"><a href="mailto:ahmed@gmail.com" class="text-decoration-none">Gmail</a> <i
+                            class="fa-regular fa-envelope"></i></div>
                 </div>
             </div>
         </div>

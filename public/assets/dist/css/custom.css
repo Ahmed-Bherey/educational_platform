@@ -653,3 +653,6 @@ textarea {
     width: 85%;
     background-color: #f47521;
 }
+.content-wrapper textarea{
+    min-height: 70px;
+}

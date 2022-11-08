@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('subCategory_id')->nullable();
             $table->string('name')->nullable();
+            $table->longText('explain')->nullable();
             $table->string('img')->nullable();
             $table->string('file')->nullable();
             $table->string('video')->nullable();

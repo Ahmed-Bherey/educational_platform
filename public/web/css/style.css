@@ -26,6 +26,7 @@ header .main {
     height: 100vh;
 }
 
+
 header nav ul li ul li {
     display: none;
     transition: .7s ease-in-out;
@@ -73,7 +74,7 @@ header .logo {
 .banner .banner_content {
     position: absolute;
     top: 30%;
-    left: 20%;
+    left: 0;
     transform: translate(-20%, -30%);
     -webkit-transform: translate(-20%, -30%);
     -moz-transform: translate(-20%, -30%);
@@ -317,7 +318,7 @@ footer .footer_box .box_content .social svg {
 }
 
 footer .container .row {
-    margin-left: 100px;
+    margin-right: 150px;
 }
 
 footer {
@@ -473,7 +474,7 @@ footer {
     font-weight: bold;
     color: var(--white);
     font-size: 20px;
-    margin-bottom: 0;
+    margin-bottom: 5px;
 }
 .categories .cat_box .cat_box_content .sub_cat a {
     padding: 0 50px;
@@ -488,4 +489,17 @@ footer {
     -ms-border-radius: 0;
     -o-border-radius: 0;
     border-bottom: 1px solid var(--main-color);
+}
+
+.subject_details .explain{
+    width: 65%;
+    margin: auto;
+    text-align: center;
+}
+.subject_details .explain p{
+    border: 1px var(--second) dashed;
+    padding: 10px 5px;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: var(--head);
 }

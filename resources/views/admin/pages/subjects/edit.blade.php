@@ -52,11 +52,6 @@
                                                     الفرعى</label>
                                             </div>
                                             <div class="col-sm-4 form-floating">
-                                                <input type="text" class="form-control" value="{{ $subject->name }}"
-                                                    id="name" placeholder="اسم الدرس" name="name">
-                                                <label for="name" class="col-form-label">اسم الدرس</label>
-                                            </div>
-                                            <div class="col-sm-4 form-floating">
                                                 <div class="heading d-flex" id="btn_img">
                                                     <div class="icon"><i class="fa-regular fa-image"></i></div>
                                                     <div class="heading_div" id="auther">
@@ -98,18 +93,22 @@
                                                 <label for="video" class="col-form-label">اضف فيديو الشرح
                                                 </label>
                                             </div>
+                                            <div class="col-sm-4 form-floating">
+                                                <input type="text" class="form-control" value="{{ $subject->name }}"
+                                                    id="name" placeholder="اسم الدرس" name="name">
+                                                <label for="name" class="col-form-label">اسم الدرس</label>
+                                            </div>
+                                            <div class="col-sm-8 form-floating mb-3">
+                                                <textarea class="form-control" rows="1" placeholder="نبذة ..." name="explain" id="note">{{ $subject->explain }}</textarea>
+                                                <label for="note" class="col-form-label">نبذة
+                                                </label>
+                                            </div>
                                         </div>
                                         {{-- row 1 --}}
                                         <div class="col-md-3">
                                             <img src="{{ asset('/public/' . Storage::url($subject->img)) }}"
                                                 style="max-width: 100%;" id="imgshow">
                                         </div>
-                                        {{-- <div class="col-md-3">
-                                            <video controls>
-                                                <source src="{{ asset('/public/' . Storage::url($subject->video)) }}" type="video/mp4">
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        </div> --}}
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
@@ -117,7 +116,8 @@
                                     <button type="submit" class="btn bg-success-2 mr-3">
                                         <i class="fa fa-check text-light" aria-hidden="true"></i>
                                     </button>
-                                    <button type="reset" class="btn bg-secondary" onclick="history.back()" type="submit">
+                                    <button type="reset" class="btn bg-secondary" onclick="history.back()"
+                                        type="submit">
                                         <i class="fas fa-undo"></i>
                                     </button>
                                 </div>
@@ -150,36 +150,36 @@
         })
     </script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('select[name="category_id"]').on('change', function() {
-            var stateID = $(this).val();
-            var csrf = $('meta[name="csrf-token"]').attr('content');
-            var route = '{{ route('category.ajax', ['id' => ':id']) }}';
-            route = route.replace(':id', stateID);
-            if (stateID) {
-                $.ajax({
-                    beforeSend: function(x) {
-                        return x.setRequestHeader('X-CSRF-TOKEN', csrf);
-                    },
-                    url: route,
-                    type: "GET",
-                    dataType: "json",
-                    success: function(data) {
-                        $('#subCategory_id').empty();
-                        $.each(data, function(key, value) {
-                            $('#subCategory_id').append($(`<option>`, {
-                                value: value.id,
-                                text: value.name,
-                            }));
-                        });
-                        $('#subCategory_id').trigger('change');
-                    }
-                });
-            } else {
-                $('select[name="subCategory_id"]').empty();
-            }
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('select[name="category_id"]').on('change', function() {
+                var stateID = $(this).val();
+                var csrf = $('meta[name="csrf-token"]').attr('content');
+                var route = '{{ route('category.ajax', ['id' => ':id']) }}';
+                route = route.replace(':id', stateID);
+                if (stateID) {
+                    $.ajax({
+                        beforeSend: function(x) {
+                            return x.setRequestHeader('X-CSRF-TOKEN', csrf);
+                        },
+                        url: route,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $('#subCategory_id').empty();
+                            $.each(data, function(key, value) {
+                                $('#subCategory_id').append($(`<option>`, {
+                                    value: value.id,
+                                    text: value.name,
+                                }));
+                            });
+                            $('#subCategory_id').trigger('change');
+                        }
+                    });
+                } else {
+                    $('select[name="subCategory_id"]').empty();
+                }
+            });
         });
-    });
-</script>
+    </script>
 @endsection

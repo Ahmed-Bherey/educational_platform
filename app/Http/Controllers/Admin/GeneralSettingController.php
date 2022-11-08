@@ -19,9 +19,9 @@ class GeneralSettingController extends Controller
     public function store(Request $request)
     {
         $generalSettings = GeneralSetting::first();
-        $logo = $request->logo->store('public/img/settings');
-        if($request->logo == ""){
-            $logo = $generalSettings->logo;
+        $logo = $generalSettings->logo;
+        if(isset($request->logo)){
+            $logo = $request->logo->store('public/img/settings');
         }
         GeneralSetting::updateOrCreate([], [
             'user_id' => Auth::user()->id,

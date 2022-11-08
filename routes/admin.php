@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::middleware('auth')->prefix('admin')->group(function(){
+Route::middleware('adminAuth')->prefix('admin')->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     // الاعدادات العامة
     Route::prefix('generalSetting')->controller(GeneralSettingController::class)->group(function(){

@@ -50,9 +50,6 @@
                                                 placeholder="اسم الدرس" name="name">
                                             <label for="name" class="col-form-label">اسم الدرس</label>
                                         </div>
-                                    </div>
-                                    {{-- row 1 --}}
-                                    <div class="row mb-3">
                                         <div class="col-sm-4 form-floating mb-3">
                                             <div class="heading d-flex" id="btn_img">
                                                 <div class="icon"><i class="fa-regular fa-image"></i></div>
@@ -95,14 +92,21 @@
                                             <label for="video" class="col-form-label">اضف فيديو الشرح
                                             </label>
                                         </div>
+                                        <div class="col-sm-4 form-floating mb-3">
+                                            <textarea class="form-control" rows="1" placeholder="نبذة ..." name="explain" id="note"></textarea>
+                                            <label for="note" class="col-form-label">نبذة
+                                            </label>
+                                        </div>
                                     </div>
+                                    {{-- row 1 --}}
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
                                     <button type="submit" class="btn bg-success-2 mr-3">
                                         <i class="fa fa-check text-light" aria-hidden="true"></i>
                                     </button>
-                                    <button type="reset" class="btn bg-secondary" onclick="history.back()" type="submit">
+                                    <button type="reset" class="btn bg-secondary" onclick="history.back()"
+                                        type="submit">
                                         <i class="fas fa-undo"></i>
                                     </button>
                                 </div>
