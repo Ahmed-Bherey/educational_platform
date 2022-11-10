@@ -9,6 +9,7 @@ use App\Models\GeneralSetting;
 use App\Models\SubCategory;
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Mockery\Matcher\Subset;
 
 class HomeController extends Controller
 {
@@ -17,7 +18,7 @@ class HomeController extends Controller
     {
         $generalSetting = GeneralSetting::first();
         $subCategories = SubCategory::get();
-        $categories = Category::where('id','>',1)->get();
+        $categories = Category::get();
         $categoriesAll = Category::get();
         $categoryFirst = Category::first();
         $subjects = Subject::take(10)->get();
@@ -66,7 +67,7 @@ class HomeController extends Controller
     {
         $generalSetting = GeneralSetting::first();
         $categories = Category::get();
-        $subjects = Subject::get();
+        $subjects = Subject::latest()->take(6)->get();
         return view('web.pages.subjectsAll',compact('subjects','categories','generalSetting'));
     }
 

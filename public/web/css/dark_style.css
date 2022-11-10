@@ -7,18 +7,23 @@
 }
 
 :root {
-    --main-color: #1d2b5f;
+    --main-color: #395B64;
     --light: #666;
-    --second: #4169e1;
+    --second: #171010;
     --black: #000000;
     --white: #ffff;
     --footer: #282828;
     --head: #374050;
+    --body: #2B2B2B;
 }
-
+body{
+    background-color: var(--main-color);
+}
 header .main {
     padding: 15px 0;
     background-image: url(../img/bg.jpg);
+    background-color: rgb(163, 157, 157);
+    background-blend-mode: multiply;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,7 +36,7 @@ header nav ul .dark_mood svg,
 header nav ul .light_mood svg{
     cursor: pointer;
 }
-/* header nav ul .light_mood{
+/* header nav ul .dark_mood{
     display: none;
 } */
 

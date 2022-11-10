@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en>
 
 <head>
     <meta charset="UTF-8" />
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{asset('public/web/css/all.min.css')}}" />
     <link rel="stylesheet" href="{{asset('public/web/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('public/web/css/swiper.css')}}">
-    <link rel="stylesheet" href="{{asset('public/web/css/style.css')}}" />
+    <link id="skin_icon" rel="stylesheet" href="{{asset('public/web/css/style.css')}}" />
 </head>
 
 <body>

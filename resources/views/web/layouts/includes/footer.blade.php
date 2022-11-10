@@ -8,13 +8,19 @@
                 </h4>
                 <div class="box_content">
                     <div class="pages"><a href="{{ route('web.index') }}" class="text-decoration-none">الرئيسية</a></div>
-                    @foreach ($categoriesAll as $key => $category)
+                    @foreach ($categories as $key => $category)
                         <div class="pages col-6 ">
                             <a href="{{ route('web.subjects', $category->id) }}"
                                 class="text-decoration-none">{{ $category->name }}</a>
                         </div>
                     @endforeach
-                    <div class="pages"><a href="#" class="text-decoration-none">تسجيل</a></div>
+                    <div class="pages">
+                        @if (Auth('member')->check())
+                            <a href="{{ route('user.logout') }}" class="text-decoration-none">خروج</a>
+                        @else
+                            <a href="{{ route('register.form') }}" class="text-decoration-none">تسجيل</a>
+                        @endif
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 footer_box">
