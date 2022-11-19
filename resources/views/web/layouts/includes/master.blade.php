@@ -2,8 +2,8 @@
 <header>
     <div class="main">
         @include('web.layouts.includes.header')
+        @include('web.layouts.includes.header_banner')
     </div>
-@include('web.layouts.includes.header_banner')
 </header>
 @yield('content')
 @include('web.layouts.includes.footer')

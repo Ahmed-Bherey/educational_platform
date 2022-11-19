@@ -16,15 +16,18 @@
                 <div class="row">
                     @foreach ($sub_cat_subjects as $key => $sub_cat_subject)
                         <div class="col-12 col-md-6 col-lg-4 subject_all_box mb-5">
-                            <a href="{{route('web.subject.details',$sub_cat_subject->id)}}">
+                            <a href="{{ route('web.subject.details', $sub_cat_subject->id) }}">
                                 <div class="subject__all_box_content position-relative">
                                     <div class="subject__all_img imgBtn">
-                                        <img src="{{ asset('/public/' . Storage::url($sub_cat_subject->img)) }}" alt="">
+                                        <img src="{{ asset('/public/' . Storage::url($sub_cat_subject->img)) }}"
+                                            alt="">
                                     </div>
                                     <div class="subject__all_title position-absolute text-end">
                                         <h3 class="title fw-bold">
                                             <a href="#" class="text-decoration-none">{{ $sub_cat_subject->name }}</a>
                                         </h3>
+                                        <a href="{{ route('web.subject.content', $sub_cat_subject->id) }}"
+                                            style="width: 70%" class="btn btn-primary fw-bold">قراءة</a>
                                         <p class="date fw-bold">{{ $sub_cat_subject->date }}</p>
                                     </div>
                                 </div>
