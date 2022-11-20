@@ -31,6 +31,7 @@ class SubCategoryController extends Controller
             'name' => $request->name,
             'img' => $img,
             'notes' => $request->notes,
+            'icon' => $request->icon,
         ]);
         return redirect()->back()->with(['success' => "تم الحفظ بنجاح"]);
     }
@@ -56,6 +57,7 @@ class SubCategoryController extends Controller
             'name' => $request->name,
             'img' => $img,
             'notes' => $request->notes,
+            'icon' => $request->icon,
         ]);
         return redirect()->route('subCategory.create')->with(['success' => "تم التحديث بنجاح"]);
     }

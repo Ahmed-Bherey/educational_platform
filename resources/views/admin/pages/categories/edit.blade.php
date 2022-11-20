@@ -48,6 +48,12 @@
                                                 <textarea class="form-control" rows="1" placeholder="ملاحظات ..." name="notes" id="notes">{{ $category->notes }}</textarea>
                                                 <label for="notes" class=" col-form-label n_ro3ya">ملاحظات </label>
                                             </div>
+                                            <div class="col-sm-4 form-floating">
+                                                <input required type="text" class="form-control"
+                                                    value="{{ $category->icon }}" id="icon" placeholder="شعار التصنيف"
+                                                    name="icon">
+                                                <label for="icon" class="col-form-label n_ro3ya">شعار التصنيف</label>
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <img src="{{ asset('/public/' . Storage::url($category->img)) }}"
@@ -75,7 +81,8 @@
                                                             <button type="button" class="btn bg-success" id="add">
                                                                 <i class="fas fa-plus-square"></i>
                                                             </button>
-                                                            <button type="button" class="btn bg-danger" onclick='delet(this)'>
+                                                            <button type="button" class="btn bg-danger"
+                                                                onclick='delet(this)'>
                                                                 <i class="fas fa-trash-alt text-light"></i>
                                                             </button>
                                                         </td>

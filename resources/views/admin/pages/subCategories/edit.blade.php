@@ -56,6 +56,12 @@
                                                 <label for="img" class="col-form-label">اضف صورة
                                                 </label>
                                             </div>
+                                            <div class="col-sm-4 form-floating">
+                                                <input required type="text" class="form-control"
+                                                    value="{{ $subCategory->icon }}" id="icon"
+                                                    placeholder="شعار التصنيف" name="icon">
+                                                <label for="icon" class="col-form-label n_ro3ya">شعار التصنيف</label>
+                                            </div>
                                             <div class="col-sm-4 form-floating mb-3">
                                                 <textarea class="form-control" rows="1" placeholder="ملاحظات ..." name="notes" id="note">{{ $subCategory->notes }}</textarea>
                                                 <label for="note" class="col-form-label">ملاحظات

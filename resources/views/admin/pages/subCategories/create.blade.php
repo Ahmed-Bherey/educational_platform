@@ -53,6 +53,11 @@
                                             <label for="img" class="col-form-label">اضف صورة
                                             </label>
                                         </div>
+                                        <div class="col-sm-4 form-floating">
+                                            <input required type="text" class="form-control" id="icon"
+                                                placeholder="شعار التصنيف" name="icon">
+                                            <label for="icon" class="col-form-label n_ro3ya">شعار التصنيف</label>
+                                        </div>
                                         <div class="col-sm-4 form-floating mb-3">
                                             <textarea class="form-control" rows="1" placeholder="ملاحظات ..." name="notes" id="note"></textarea>
                                             <label for="note" class="col-form-label">ملاحظات
@@ -117,7 +122,8 @@
                                                                     type="submit" class="btn bg-secondary"><i
                                                                         class="far fa-edit" aria-hidden="true"></i></a>
                                                                 <a href="{{ route('subCategory.destroy', $subCategory->id) }}"
-                                                                    type="submit" onclick="return confirm('Are you sure?')"
+                                                                    type="submit"
+                                                                    onclick="return confirm('Are you sure?')"
                                                                     class="btn btn-danger"><i
                                                                         class="fas fa-trash-alt"></i></a>
                                                             </td>

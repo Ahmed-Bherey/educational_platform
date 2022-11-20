@@ -17,6 +17,7 @@ class SubCategory extends Model
         'name',
         'img',
         'notes',
+        'icon',
     ];
 
     public function users()

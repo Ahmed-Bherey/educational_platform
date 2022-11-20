@@ -28,6 +28,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'img' => $img,
             'notes' => $request->notes,
+            'icon' => $request->icon,
         ]);
 
         foreach ($request->data['desc'] as $key => $value)
@@ -64,6 +65,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'img' => $img,
             'notes' => $request->notes,
+            'icon' => $request->icon,
         ]);
         return redirect()->route('category.create')->with(['success' => "تم التحديث بنجاح"]);
     }

@@ -43,6 +43,11 @@
                                             <label for="img" class="col-form-label n_ro3ya">صورة التصنيف</label>
                                         </div>
                                         <div class="col-sm-4 form-floating">
+                                            <input required type="text" class="form-control" id="icon"
+                                                placeholder="شعار التصنيف" name="icon">
+                                            <label for="icon" class="col-form-label n_ro3ya">شعار التصنيف</label>
+                                        </div>
+                                        <div class="col-sm-4 form-floating mt-3">
                                             <textarea class="form-control" rows="1" placeholder="ملاحظات ..." name="notes" id="notes"></textarea>
                                             <label for="notes" class=" col-form-label n_ro3ya">ملاحظات </label>
                                         </div>
