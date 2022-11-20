@@ -11,7 +11,7 @@
         <section class="subject_details">
             <div class="container">
                 <div class="row flex-column">
-                    <div class="subject_details_content">
+                    <div class="subject_details_content" data-aos="fade-up">
                         <div class="video">
                             @if ($subject->video != null)
                                 <video controls>
@@ -24,7 +24,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="explain">
+                    <div class="explain" data-aos="fade-up">
                         <p>
                             {{ $subject->explain }}
                         </p>

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     direction: rtl;
 }
 
@@ -321,6 +321,7 @@ footer .footer_box h4 {
 footer .footer_box h4 span {
     border-bottom: #d7d7d7 1px solid;
     padding-bottom: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 5px;
 }
 
@@ -351,28 +352,33 @@ footer {
 
 /* supject page */
 .supject_banner {
-    background-image: url(../img/bg2.jpg);
+    background-color: var(--second);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     width: 100%;
     height: 40vh;
-    border-bottom: royalblue solid 2px;
+    border-bottom: var(--main-color) solid 2px;
 }
-
+@font-face {
+    font-family: 'Cairo', sans-serif;
+    src: url('../../web/fonts/Cairo-VariableFont_slnt\,wght.ttf');
+}
 .supject_banner .subject_head {
     background-color: var(--main-color);
     color: var(--white);
     position: absolute;
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     padding: 10px 15px;
+    font-family: 'Cairo', sans-serif;
     border-radius: 20px 0 20px 0;
     -webkit-border-radius: 20px 0 20px 0;
     -moz-border-radius: 20px 0 20px 0;

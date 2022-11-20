@@ -10,7 +10,7 @@
     @if ($sub_cat_subjects->isEmpty())
         <h3 class="text-center text-danger">لم يتم اضافة دروس ل {{ $sub_cat_subject->name }} بعد</h3>
     @else
-        <section class="subject_all position-relative">
+        <section class="subject_all position-relative" data-aos="fade-up">
             <div class="overflew position-fixed" id="overflew"></div>
             <div class="container">
                 <div class="row">
@@ -26,8 +26,12 @@
                                         <h3 class="title fw-bold">
                                             <a href="#" class="text-decoration-none">{{ $sub_cat_subject->name }}</a>
                                         </h3>
-                                        <a href="{{ route('web.subject.content', $sub_cat_subject->id) }}"
-                                            style="width: 70%" class="btn btn-primary fw-bold">قراءة</a>
+                                        <div class="d-flex justify-content-around">
+                                            <a href="{{ route('download', $sub_cat_subject->id) }}"
+                                                class="btn btn-info fw-bold" style="width: 45%">تحميل</a>
+                                            <a href="{{ route('web.subject.content', $sub_cat_subject->id) }}"
+                                                class="btn btn-success fw-bold" style="width: 45%">قراءة</a>
+                                        </div>
                                         <p class="date fw-bold">{{ $sub_cat_subject->date }}</p>
                                     </div>
                                 </div>

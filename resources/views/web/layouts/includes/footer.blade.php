@@ -2,7 +2,7 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 footer_box">
+            <div class="col-12 col-md-6 col-lg-4 footer_box" data-aos="fade-up">
                 <h4>
                     <span>صفحات</span>
                 </h4>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 footer_box">
+            <div class="col-12 col-md-6 col-lg-4 footer_box" data-aos="fade-down">
                 <h4>
                     <span>تواصل</span>
                 </h4>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 footer_box">
+            <div class="col-12 col-md-6 col-lg-4 footer_box" data-aos="fade-up">
                 <h4>
                     <span>متابعة</span>
                 </h4>

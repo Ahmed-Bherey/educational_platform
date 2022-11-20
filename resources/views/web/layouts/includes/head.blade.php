@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('public/web/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('public/web/css/swiper.css')}}">
     <link id="skin_icon" rel="stylesheet" href="{{asset('public/web/css/style.css')}}" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>

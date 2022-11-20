@@ -33,7 +33,7 @@
             </div>
         </div>
     </section> --}}
-    <section class="categories">
+    <section class="categories" data-aos="zoom-in-down">
         <div class="container">
             <h2 class="text-right fw-bold mb-4 text-primary">التصنيفات</h2>
             <div class="row">
