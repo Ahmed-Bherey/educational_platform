@@ -38,7 +38,7 @@
             <h2 class="text-right fw-bold mb-4 text-primary">التصنيفات</h2>
             <div class="row">
                 @foreach ($categoriesAll as $key => $category)
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box mb-3">
                         <div class="cat_box_content">
                             <div class="main_cat d-flex">
                                 <span class="icon btn"><i class="{{$category->icon}}"></i></span>

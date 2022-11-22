@@ -1,7 +1,7 @@
 </main>
 <footer>
     <div class="container">
-        <div class="row">
+        <div class="row parenRow">
             <div class="col-12 col-md-6 col-lg-4 footer_box" data-aos="fade-up">
                 <h4>
                     <span>صفحات</span>
@@ -64,3 +64,30 @@
         </div>
     </div>
 </footer>
+
+<!------------------------------- Start sidebar -------------------------->
+
+<aside class="side_menu">
+    <nav>
+        <ul>
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">تصنيف رئيسى 1</a></li>
+            <li><a href="#">تصنيف رئيسى 2</a></li>
+            <li><a href="#">تسجيل خروج</a></li>
+        </ul>
+    </nav>
+</aside>
+
+<!------------------------------- Start sidebar -------------------------->
+
+<!------------------------------- Start Overlay Menu -------------------------->
+<div class="overlay-menu"></div>
+<!------------------------------- End Overlay Menu -------------------------->
+
+<!------------------------------- Start Go To Top -------------------------->
+<div class="go-top position-fixed end-0 bottom-0">
+    <div class="container">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+</div>
+<!------------------------------- End Go To Top -------------------------->

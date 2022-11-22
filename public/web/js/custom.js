@@ -4,39 +4,56 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-// let imgBtn = document.querySelectorAll('.imgBtn'),
-//     overlay = document.querySelector('#overflew'),
-//     video = document.querySelectorz('#subject_video')
+// ------------------ Start Go To Top
+let ScrolTop = document.querySelector(".go-top"),
+    stickyNavbar = document.querySelector('.sticky_navbar'),
+    body = document.querySelector("html , body");
+window.addEventListener("scroll", () => {
+    if (body.scrollTop >= 200) {
+        ScrolTop.style.display = "block";
+        ScrolTop.addEventListener("click", () => {
+            window.scrollTo(0, 0);
+        });
+    } else {
+        ScrolTop.style.display = "none";
+    }
+});
+// ------------------ End Go To Top
 
-// for (let i = 0; i < imgBtn.length; i++) {
-//     imgBtn[i].addEventListener('click',()=>{
-//         overlay.classList.add('showOverlay')
+// ------------------ Start side menu
+let sideMenu = document.querySelector('.side_menu'),
+    overlayMenu = document.querySelector('.overlay-menu'),
+    btnMenu = document.querySelector('.menu_icon');
 
-//         video.classList.add('video')
-//     })
-// }
+    btnMenu.addEventListener('click', ()=>{
+        sideMenu.classList.add('open')
+        overlayMenu.classList.add('showOverlayBlock')
+        setTimeout(function() {
+            overlayMenu.classList.add('showOverlayOpacity');
+        }, 100);
+    })
 
-// overlay.addEventListener('click',()=>{
-//     overlay.classList.remove('showOverlay')
-//     video.classList.remove('video')
+    overlayMenu.addEventListener('click', ()=>{
+        sideMenu.classList.remove('open')
+        overlayMenu.classList.remove('showOverlayOpacity')
+        setTimeout(function() {
+            overlayMenu.classList.remove('showOverlayBlock');
+        }, 700);
+    })
+
+
+
+
+
+
+
+
+
+
+// window.addEventListener('scroll', () => {
+//     if (body.scrollTop >= 200) {
+//         stickyNavbar.style.display = "block"
+//     } else {
+//         stickyNavbar.style.display = "none"
+//     }
 // })
-
-// dark mood
-
-let SkinIcon = document.querySelector('#skin_icon'),
-    DarkTheme = document.querySelector('.dark_mood'),
-    LightTheme = document.querySelector('.light_mood');
-
-DarkTheme.addEventListener('click', () => {
-    SkinIcon.setAttribute("href", "public/web/css/dark_style.css");
-    localStorage.setItem('dark_theme', "public/web/css/dark_style.css");
-});
-
-if (localStorage.getItem('dark_theme')) {
-    SkinIcon.setAttribute("href", "public/web/css/dark_style.css");
-}
-
-LightTheme.addEventListener('click', () => {
-    SkinIcon.setAttribute("href", "public/web/css/style.css");
-    localStorage.removeItem('dark_theme');
-});
