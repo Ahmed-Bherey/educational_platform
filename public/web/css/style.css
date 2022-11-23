@@ -1,3 +1,4 @@
+/*------------ Start Designing Default --------------*/
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +17,13 @@
     --head: #374050;
 }
 
+.wrraber {
+    min-height: 60vh;
+}
+
+/*------------ End Designing Default --------------*/
+
+/*------------ Start Designing header --------------*/
 header .nav_content .nav .menu_icon {
     color: var(--white);
     font-size: 28px;
@@ -34,25 +42,10 @@ header .main .nav_content .logo {
     color: var(--white);
 }
 
-header .main .banner {
-    background-image: url(../img/bg.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    border-bottom: var(--second) solid 2px;
-}
-
 header .nav ul .dark_mood svg,
 header .nav ul .light_mood svg {
     cursor: pointer;
 }
-
-/* header nav ul .light_mood{
-    display: none;
-} */
 
 header .nav ul li ul li {
     display: none;
@@ -96,6 +89,20 @@ header .logo {
     font-family: cursive;
     color: var(--main-color);
     font-weight: bold;
+}
+
+/*------------ End Designing header --------------*/
+
+/*------------ Start Designing Banner --------------*/
+header .main .banner {
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    border-bottom: var(--second) solid 2px;
 }
 
 .banner .banner_content {
@@ -159,6 +166,63 @@ header .logo {
     margin: 20px 40px 20px 0;
 }
 
+/*------------ End Designing Banner --------------*/
+
+/*------------ Start Designing Categories Section --------------*/
+.categories {
+    direction: rtl;
+    margin: 50px 0;
+}
+
+.categories .cat_box .cat_box_content .main_cat p {
+    border: 1px solid var(--second);
+    padding: 7px 50px;
+    background-color: var(--main-color);
+    font-weight: bold;
+    color: var(--white);
+    font-size: 20px;
+    border-radius: 52px 0 0 5px;
+    margin-bottom: 5px;
+    -webkit-border-radius: 52px 0 0 5px;
+    -moz-border-radius: 52px 0 0 5px;
+    -ms-border-radius: 52px 0 0 5px;
+    -o-border-radius: 52px 0 0 5px;
+}
+
+.categories .cat_box .cat_box_content .main_cat .icon {
+    background-color: var(--second);
+    color: var(--white);
+    margin-bottom: 5px;
+    border-radius: 0px 5px 5pc;
+}
+
+.categories .cat_box .cat_box_content .sub_cat .icon {
+    background-color: var(--main-color);
+    color: var(--white);
+    border-radius: 0px 5px 5pc;
+}
+
+.categories .cat_box .cat_box_content .sub_cat a {
+    padding: 7px 50px;
+    background-color: var(--second);
+    font-weight: bold;
+    color: var(--white);
+    font-size: 18px;
+    border-radius: 52px 0 0 5px;
+    border-bottom: 1px solid var(--main-color);
+    -webkit-border-radius: 52px 0 0 5px;
+    -moz-border-radius: 52px 0 0 5px;
+    -ms-border-radius: 52px 0 0 5px;
+    -o-border-radius: 52px 0 0 5px;
+}
+
+.categories .cat_box .cat_box_content .sub_cat {
+    margin-right: 20px;
+}
+
+/*------------ End Designing Categories Section --------------*/
+
+/*------------ Start Designing Leatest Section --------------*/
 .leatest,
 .subjects {
     margin: 50px 0;
@@ -199,6 +263,9 @@ header .logo {
     bottom: 0;
 }
 
+/*------------ End Designing Leatest Section --------------*/
+
+/*------------ Start Designing Subjects Section --------------*/
 .subjects {
     padding: 15px 0;
     background-image: url(../img/main_bg.jpg);
@@ -318,8 +385,13 @@ header .logo {
     -o-border-radius: 0 0 15px 15px;
 }
 
-.subject_all .subject_all_box .btns a {
-    width: 45%;
+/*------------ End Designing Subjects Section --------------*/
+
+/*------------ Start Designing Footer --------------*/
+footer {
+    padding: 20px 0;
+    margin-top: 50px;
+    border-top: 1px solid var(--main-color);
 }
 
 footer .footer_box h4 {
@@ -355,14 +427,10 @@ footer .container .row {
     margin-right: 150px;
 }
 
-footer {
-    padding: 20px 0;
-    margin-top: 50px;
-    border-top: 1px solid var(--main-color);
-}
+/*------------ End Designing Footer --------------*/
 
 
-/* supject page */
+/*------------ Start Designing Supject Page --------------*/
 .supject_banner {
     background-color: var(--second);
     background-position: center;
@@ -397,6 +465,10 @@ footer {
     -moz-border-radius: 20px 0 20px 0;
     -ms-border-radius: 20px 0 20px 0;
     -o-border-radius: 20px 0 20px 0;
+}
+
+.subject_all .subject_all_box .btns a {
+    width: 45%;
 }
 
 .subject_all {
@@ -450,10 +522,9 @@ footer {
     color: var(--light);
 }
 
-.wrraber {
-    min-height: 60vh;
-}
+/*------------ End Designing Supject Page --------------*/
 
+/*------------ Start Designing Subject Details Page --------------*/
 .subject_all video {
     max-width: 100%;
     border-radius: 15px;
@@ -502,58 +573,6 @@ footer {
     width: 60%;
 }
 
-/* -------------------------------------- */
-.categories {
-    direction: rtl;
-    margin: 50px 0;
-}
-
-.categories .cat_box .cat_box_content .main_cat p {
-    border: 1px solid var(--second);
-    padding: 7px 50px;
-    background-color: var(--main-color);
-    font-weight: bold;
-    color: var(--white);
-    font-size: 20px;
-    border-radius: 52px 0 0 5px;
-    margin-bottom: 5px;
-    -webkit-border-radius: 52px 0 0 5px;
-    -moz-border-radius: 52px 0 0 5px;
-    -ms-border-radius: 52px 0 0 5px;
-    -o-border-radius: 52px 0 0 5px;
-}
-
-.categories .cat_box .cat_box_content .main_cat .icon {
-    background-color: var(--second);
-    color: var(--white);
-    margin-bottom: 5px;
-    border-radius: 0px 5px 5pc;
-}
-
-.categories .cat_box .cat_box_content .sub_cat .icon {
-    background-color: var(--main-color);
-    color: var(--white);
-    border-radius: 0px 5px 5pc;
-}
-
-.categories .cat_box .cat_box_content .sub_cat a {
-    padding: 7px 50px;
-    background-color: var(--second);
-    font-weight: bold;
-    color: var(--white);
-    font-size: 18px;
-    border-radius: 52px 0 0 5px;
-    border-bottom: 1px solid var(--main-color);
-    -webkit-border-radius: 52px 0 0 5px;
-    -moz-border-radius: 52px 0 0 5px;
-    -ms-border-radius: 52px 0 0 5px;
-    -o-border-radius: 52px 0 0 5px;
-}
-
-.categories .cat_box .cat_box_content .sub_cat {
-    margin-right: 20px;
-}
-
 .subject_details .explain {
     width: 65%;
     margin: auto;
@@ -566,7 +585,16 @@ footer {
     font-size: 20px;
     font-family: sans-serif;
     color: var(--head);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
+
+/*------------ End Designing Subject Details Page --------------*/
+
+/*------------------------------ End Designing Models -----------------------------*/
 
 /*------------ Start Go To Top Style ------------------*/
 
@@ -680,11 +708,30 @@ aside.side_menu.open {
 /*------------ End Overlay-Menu Style ------------------*/
 
 
+/*---------------------------- Start Media Quaries ------------------------*/
+
+/*---------- Start Max Media 1200px ----------*/
 @media(max-width:1200px) {}
 
+/*---------- End Max Media 1200px ----------*/
+
+/*---------- Start Max Media 992px ----------*/
 @media(max-width:992px) {
     header .main .banner {
         height: 70vh;
+    }
+
+    header .main .nav_content .nav ul {
+        display: none;
+    }
+
+    header .nav_content .nav .menu_icon {
+        display: block;
+    }
+
+    header .main .nav_content .logo,
+    header .nav_content .nav .menu_icon {
+        font-size: 36px;
     }
 
     .banner .banner_content h1 {
@@ -696,16 +743,14 @@ aside.side_menu.open {
         margin-top: 70px;
     }
 
-    footer .footer_box .box_content a,
-    footer .footer_box .box_content span {
-        font-size: 22px;
-        font-weight: bold;
+    .categories .cat_box .cat_box_content .main_cat p,
+    .categories .cat_box .cat_box_content .sub_cat a {
+        font-size: 24px;
     }
 
-    footer .footer_box .pages,
-    footer .footer_box .tel,
-    footer .footer_box .social {
-        margin: 8px 0;
+    .categories .cat_box .cat_box_content .main_cat svg,
+    .categories .cat_box .cat_box_content .sub_cat svg {
+        font-size: 20px;
     }
 
     .supject_banner {
@@ -746,14 +791,6 @@ aside.side_menu.open {
         font-size: 28px;
     }
 
-    header .main .nav_content .nav ul {
-        display: none;
-    }
-
-    header .nav_content .nav .menu_icon {
-        display: block;
-    }
-
     .supject_banner .subject_head {
         width: 50%;
         text-align: center;
@@ -769,6 +806,18 @@ aside.side_menu.open {
 
     footer .footer_box .box_content a,
     footer .footer_box .box_content span {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    footer .footer_box .pages,
+    footer .footer_box .tel,
+    footer .footer_box .social {
+        margin: 8px 0;
+    }
+
+    footer .footer_box .box_content a,
+    footer .footer_box .box_content span {
         font-size: 28px;
     }
 
@@ -780,24 +829,19 @@ aside.side_menu.open {
     footer .footer_box .social svg {
         font-size: 28px;
     }
-
-    header .main .nav_content .logo,
-    header .nav_content .nav .menu_icon {
-        font-size: 36px;
-    }
-    .categories .cat_box .cat_box_content .main_cat p,
-    .categories .cat_box .cat_box_content .sub_cat a{
-        font-size: 24px;
-    }
-    .categories .cat_box .cat_box_content .main_cat svg,
-    .categories .cat_box .cat_box_content .sub_cat svg{
-        font-size: 20px;
-    }
 }
 
+/*---------- End Max Media 992px ----------*/
+
+/*---------- Start Max Media 768px ----------*/
 @media(max-width:768px) {
     header .main .banner {
         height: 50vh;
+    }
+
+    header .main .nav_content .logo,
+    header .nav_content .nav .menu_icon {
+        font-size: 30px;
     }
 
     .banner .banner_content h1 {
@@ -824,15 +868,16 @@ aside.side_menu.open {
         width: 70%;
     }
 
+    .banner .banner_content .pages {
+        position: absolute;
+        bottom: -10px;
+        right: 50%;
+    }
+
     .categories .cat_box {
         display: flex;
         justify-content: center;
     }
-
-    /* .categories .cat_box .cat_box_content {
-        border-bottom: 1px solid var(--main-color);
-        padding-bottom: 10px;
-    } */
 
     .categories .cat_box .cat_box_content .main_cat p,
     .categories .cat_box .cat_box_content .main_cat .icon,
@@ -841,28 +886,26 @@ aside.side_menu.open {
         font-size: 30px;
     }
 
-    .banner .banner_content .pages {
-        position: absolute;
-        bottom: -10px;
-        right: 50%;
-    }
-
-    footer .fl_center {
-        text-align: center;
-        margin-top: 15px;
-    }
-
     .subject_all .subject_all_box .subject__all_box_content .subject__all_title {
         bottom: -58%;
+    }
+
+    .subject_all .subject_all_box .btns a,
+    .subject_details .explain a {
+        font-size: 28px;
+    }
+
+    .subject_details h3 {
+        font-size: 35px;
     }
 
     footer {
         margin-top: 150px;
     }
 
-    .subject_all .subject_all_box .btns a,
-    .subject_details .explain a {
-        font-size: 28px;
+    footer .fl_center {
+        text-align: center;
+        margin-top: 15px;
     }
 
     .subject_all .subject_all_box .subject__all_box_content .subject__all_title .date,
@@ -901,37 +944,39 @@ aside.side_menu.open {
         margin-bottom: 200px;
     }
 
-    header .main .nav_content .logo,
-    header .nav_content .nav .menu_icon {
-        font-size: 30px;
-    }
-
-    .subject_details h3 {
-        font-size: 35px;
-    }
-
-    aside.side_menu{
+    aside.side_menu {
         width: 60%;
         right: -60%;
     }
 }
 
+/*---------- End Max Media 768px ----------*/
+
+/*---------- Start Max Media 576px ----------*/
 @media(max-width:576px) {
+
+    header .main .nav_content .logo,
+    header .nav_content .nav .menu_icon {
+        font-size: 25px;
+    }
+
     .banner .banner_content h1 {
         font-size: 38px;
     }
 
-    .banner .banner_content{
+    .banner .banner_content {
         width: 80%;
         margin-left: 35px;
     }
+
     .banner .banner_content p {
         font-size: 24px;
     }
 
-    .banner .banner_content .btns{
+    .banner .banner_content .btns {
         margin-top: -30px;
     }
+
     .banner .banner_content .btns a {
         width: 100%;
     }
@@ -950,6 +995,16 @@ aside.side_menu.open {
         padding-bottom: 10px;
     }
 
+    .categories .cat_box .cat_box_content .main_cat p,
+    .categories .cat_box .cat_box_content .sub_cat a {
+        font-size: 24px;
+    }
+
+    .categories .cat_box .cat_box_content .main_cat svg,
+    .categories .cat_box .cat_box_content .sub_cat svg {
+        font-size: 20px;
+    }
+
     .supject_banner .subject_head {
         width: 60%;
         text-align: center;
@@ -964,26 +1019,16 @@ aside.side_menu.open {
         font-weight: 550;
     }
 
-    header .main .nav_content .logo,
-    header .nav_content .nav .menu_icon {
-        font-size: 25px;
-    }
-
     .subject_details h3 {
         font-size: 35px;
     }
 
-    .categories .cat_box .cat_box_content .main_cat p,
-    .categories .cat_box .cat_box_content .sub_cat a{
-        font-size: 24px;
-    }
-    .categories .cat_box .cat_box_content .main_cat svg,
-    .categories .cat_box .cat_box_content .sub_cat svg{
-        font-size: 20px;
-    }
-
-    aside.side_menu{
+    aside.side_menu {
         width: 80%;
         right: -80%;
     }
 }
+
+/*---------- End Max Media 576px ----------*/
+
+/*---------------------------- End Media Quaries ------------------------*/
