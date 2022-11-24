@@ -389,7 +389,7 @@ header .main .banner {
 
 /*------------ Start Designing Footer --------------*/
 footer {
-    padding: 20px 0;
+    padding-top: 20px;
     margin-top: 50px;
     border-top: 1px solid var(--main-color);
 }
@@ -426,6 +426,20 @@ footer .footer_box .box_content .social svg {
 footer .container .row {
     margin-right: 150px;
 }
+footer .copyright{
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 5px 0;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 21px;
+    border-top: 2px solid var(--second);
+}
+footer .copyright a{
+    color: chocolate;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 /*------------ End Designing Footer --------------*/
 
@@ -453,6 +467,8 @@ footer .container .row {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 40%;
+    text-align: center;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -718,7 +734,7 @@ aside.side_menu.open {
 /*---------- Start Max Media 992px ----------*/
 @media(max-width:992px) {
     header .main .banner {
-        height: 70vh;
+        height: 80vh;
     }
 
     header .main .nav_content .nav ul {
@@ -835,9 +851,6 @@ aside.side_menu.open {
 
 /*---------- Start Max Media 768px ----------*/
 @media(max-width:768px) {
-    header .main .banner {
-        height: 50vh;
-    }
 
     header .main .nav_content .logo,
     header .nav_content .nav .menu_icon {
@@ -845,11 +858,11 @@ aside.side_menu.open {
     }
 
     .banner .banner_content h1 {
-        font-size: 50px;
+        font-size: 45px;
     }
 
     .banner .banner_content p {
-        font-size: 24px;
+        font-size: 25px;
         margin-top: 0;
     }
 
@@ -872,6 +885,10 @@ aside.side_menu.open {
         position: absolute;
         bottom: -10px;
         right: 50%;
+    }
+
+    .banner .banner_content .pages a {
+        font-size: 28px;
     }
 
     .categories .cat_box {
@@ -961,7 +978,7 @@ aside.side_menu.open {
     }
 
     .banner .banner_content h1 {
-        font-size: 38px;
+        font-size: 32px;
     }
 
     .banner .banner_content {
@@ -970,7 +987,7 @@ aside.side_menu.open {
     }
 
     .banner .banner_content p {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .banner .banner_content .btns {
@@ -982,12 +999,13 @@ aside.side_menu.open {
     }
 
     .banner .banner_content .pages {
-        bottom: -6%;
-        right: 0;
+        bottom: -11%;
+        right: -1%;
     }
 
     .banner .banner_content .pages a {
         font-size: 38px;
+        font-size: 33px;
     }
 
     .categories .cat_box .cat_box_content {

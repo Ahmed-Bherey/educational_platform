@@ -16,6 +16,12 @@
                                         <h3 class="title fw-bold">
                                             <a href="#" class="text-decoration-none">{{ $subject->name }}</a>
                                         </h3>
+                                        <div class="d-flex justify-content-around btns">
+                                            <a href="{{ route('download', $subject->id) }}"
+                                                class="btn btn-info fw-bold">تحميل</a>
+                                            <a href="{{ route('web.subject.content', $subject->id) }}"
+                                                class="btn btn-success fw-bold">قراءة</a>
+                                        </div>
                                         <p class="date fw-bold">{{ $subject->date }}</p>
                                     </div>
                                 </div>

@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $generalSetting = GeneralSetting::first();
         $subCategories = SubCategory::get();
-        $categories = Category::get();
+        $categories = Category::paginate(12);
         $categoriesAll = Category::get();
         $categoryFirst = Category::first();
         $subjects = Subject::take(10)->get();
@@ -67,7 +67,7 @@ class HomeController extends Controller
     {
         $generalSetting = GeneralSetting::first();
         $categories = Category::get();
-        $subjects = Subject::latest()->take(6)->get();
+        $subjects = Subject::latest()->take(12)->get();
         return view('web.pages.subjectsAll',compact('subjects','categories','generalSetting'));
     }
 

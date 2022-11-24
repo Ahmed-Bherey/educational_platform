@@ -37,16 +37,16 @@
         <div class="container">
             <h2 class="text-right fw-bold mb-4 text-primary">التصنيفات</h2>
             <div class="row">
-                @foreach ($categoriesAll as $key => $category)
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box mb-3">
+                @foreach ($categories as $key => $category)
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 cat_box mb-5">
                         <div class="cat_box_content">
                             <div class="main_cat d-flex">
-                                <span class="icon btn"><i class="{{$category->icon}}"></i></span>
+                                <span class="icon btn"><i class="{{ $category->icon }}"></i></span>
                                 <p class="btn">{{ $category->name }}</p>
                             </div>
                             <div class="sub_cat d-flex">
                                 @foreach (\App\Models\SubCategory::where('category_id', $category->id)->get() as $subCategory)
-                                <span class="icon btn mb-1"><i class="{{$subCategory->icon}}"></i></span>
+                                    <span class="icon btn mb-1"><i class="{{ $subCategory->icon }}"></i></span>
                                     <a href="{{ route('sub_cat_subjects', $subCategory->id) }}"
                                         class="btn mb-1">{{ $subCategory->name }}</a>
                                 @endforeach
@@ -56,6 +56,7 @@
                 @endforeach
             </div>
         </div>
+        {{$categories->links()}}
     </section>
     {{-- <section class="subjects">
         <div class="container">

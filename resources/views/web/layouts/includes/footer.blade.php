@@ -8,12 +8,14 @@
                 </h4>
                 <div class="box_content">
                     <div class="pages"><a href="{{ route('web.index') }}" class="text-decoration-none">الرئيسية</a></div>
-                    @foreach ($categories as $key => $category)
+                    <div class="pages"><a href="{{ route('web.index') }}" class="text-decoration-none">التصنيفات</a></div>
+                    <div class="pages"><a href="{{ route('web.subjectsAll') }}" class="text-decoration-none">اخر التحديثات</a></div>
+                    {{-- @foreach ($categories as $key => $category)
                         <div class="pages col-6 ">
                             <a href="{{ route('web.subjects', $category->id) }}"
                                 class="text-decoration-none">{{ $category->name }}</a>
                         </div>
-                    @endforeach
+                    @endforeach --}}
                     <div class="pages">
                         @if (Auth('member')->check())
                             <a href="{{ route('user.logout') }}" class="text-decoration-none">خروج</a>
@@ -62,6 +64,12 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="copyright">
+        <p class="text-center">
+            جميع الحقوق محفوظة &copy; <a href="https://api.whatsapp.com/send?phone=201221093210"
+                target="blank">Bherey</a>
+        </p>
     </div>
 </footer>
 
