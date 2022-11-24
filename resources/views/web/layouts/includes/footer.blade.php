@@ -8,8 +8,10 @@
                 </h4>
                 <div class="box_content">
                     <div class="pages"><a href="{{ route('web.index') }}" class="text-decoration-none">الرئيسية</a></div>
-                    <div class="pages"><a href="{{ route('web.index') }}" class="text-decoration-none">التصنيفات</a></div>
-                    <div class="pages"><a href="{{ route('web.subjectsAll') }}" class="text-decoration-none">اخر التحديثات</a></div>
+                    <div class="pages"><a href="{{ url('/#categories') }}" class="text-decoration-none">التصنيفات</a>
+                    </div>
+                    <div class="pages"><a href="{{ route('web.subjectsAll') }}" class="text-decoration-none">اخر
+                            التحديثات</a></div>
                     {{-- @foreach ($categories as $key => $category)
                         <div class="pages col-6 ">
                             <a href="{{ route('web.subjects', $category->id) }}"
@@ -68,7 +70,7 @@
     <div class="copyright">
         <p class="text-center">
             جميع الحقوق محفوظة &copy; <a href="https://api.whatsapp.com/send?phone=201221093210"
-                target="blank">Bherey</a>
+                target="blank">Eng-Bherey</a>
         </p>
     </div>
 </footer>
@@ -78,10 +80,14 @@
 <aside class="side_menu">
     <nav>
         <ul>
-            <li><a href="#">الرئيسية</a></li>
-            <li><a href="#">تصنيف رئيسى 1</a></li>
-            <li><a href="#">تصنيف رئيسى 2</a></li>
-            <li><a href="#">تسجيل خروج</a></li>
+            <li><a href="{{ route('web.index') }}">الرئيسية</a></li>
+            <li><a href="{{url('/#categories')}}">التصنيفات</a></li>
+            <li><a href="{{ route('web.subjectsAll') }}">اخر التحديثات</a></li>
+            @if (Auth('member')->check())
+            <li><a href="{{ route('user.logout') }}">تسجيل خروج</a></li>
+            @else
+            <li><a href="{{ route('user.login.form') }}">تسجيل الدخول</a></li>
+            @endif
         </ul>
     </nav>
 </aside>

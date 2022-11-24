@@ -11,7 +11,7 @@
                     <li><a href="{{ route('user.login.form') }}" class="navLink">تسجيل الدخول</a></li>
                 @endif
                 <li><a href="{{ route('web.index') }}" class="navLink active">الرئيسية</a></li>
-                <li><a href="{{ route('web.index') }}" class="navLink active">التصنيفات</a></li>
+                <li><a href="{{url('/#categories')}}" class="navLink active">التصنيفات</a></li>
                 <li><a href="{{ route('web.subjectsAll') }}" class="navLink active">اخر التحديثات</a></li>
                 <li class="d-none"><input type="color" id="coloc_controller"></li>
                 {{-- @foreach ($categories as $category)
@@ -37,7 +37,7 @@
                     <li><a href="{{ route('user.login.form') }}">تسجيل الدخول</a></li>
                 @endif
                 <li><a href="{{ route('web.index') }}">الرئيسية</a></li>
-                <li><a href="{{ route('web.index') }}" class="navLink active">التصنيفات</a></li>
+                <li><a href="{{url('/#categories')}}" class="navLink active">التصنيفات</a></li>
                 <li><a href="{{ route('web.subjectsAll') }}" class="navLink active">اخر التحديثات</a></li>
                 <li class="d-none"><input type="color" id="coloc_controller"></li>
                 {{-- @foreach ($categories as $category)

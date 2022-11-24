@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row">
                     @foreach ($subjects as $key => $subject)
-                        <div class="col-12 col-md-6 col-lg-4 subject_all_box mb-5">
+                        <div class="col-12 col-md-6 col-lg-4 subject_all_box">
                             <a href="{{ route('web.subject.details', $subject->id) }}">
                                 <div class="subject__all_box_content position-relative">
                                     <div class="subject__all_img imgBtn">
