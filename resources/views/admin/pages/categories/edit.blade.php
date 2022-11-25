@@ -40,7 +40,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 form-floating" hidden>
-                                                <input required type="file" class="form-control" id="upload_img"
+                                                <input type="file" class="form-control" id="upload_img"
                                                     placeholder="صورة التصنيف" name="img">
                                                 <label for="img" class="col-form-label n_ro3ya">صورة التصنيف</label>
                                             </div>

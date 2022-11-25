@@ -44,11 +44,13 @@
                                 <span class="icon btn"><i class="{{ $category->icon }}"></i></span>
                                 <p class="btn">{{ $category->name }}</p>
                             </div>
-                            <div class="sub_cat d-flex">
+                            <div class="sub_cat">
                                 @foreach (\App\Models\SubCategory::where('category_id', $category->id)->get() as $subCategory)
-                                    <span class="icon btn mb-1"><i class="{{ $subCategory->icon }}"></i></span>
-                                    <a href="{{ route('sub_cat_subjects', $subCategory->id) }}"
-                                        class="btn mb-1">{{ $subCategory->name }}</a>
+                                    <div class="d-flex">
+                                        <span class="icon btn mb-1"><i class="{{ $subCategory->icon }}"></i></span>
+                                        <a href="{{ route('sub_cat_subjects', $subCategory->id) }}"
+                                            class="btn mb-1">{{ $subCategory->name }}</a>
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
@@ -56,7 +58,7 @@
                 @endforeach
             </div>
         </div>
-        {{$categories->links()}}
+        {{ $categories->links() }}
     </section>
     {{-- <section class="subjects">
         <div class="container">

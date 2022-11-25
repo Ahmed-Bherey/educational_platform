@@ -223,7 +223,7 @@ header .main .banner {
     background-color: var(--second);
     font-weight: bold;
     color: var(--white);
-    font-size: 18px;
+    font-size: 17px;
     border-radius: 52px 0 0 5px;
     border-bottom: 1px solid var(--main-color);
     -webkit-border-radius: 52px 0 0 5px;
@@ -235,6 +235,9 @@ header .main .banner {
 .categories .cat_box .cat_box_content .sub_cat {
     margin-right: 20px;
 }
+/* .categories .cat_box .cat_box_content{
+    border-left: 1px solid var(--main-color);
+} */
 
 /*------------ End Designing Categories Section --------------*/
 
