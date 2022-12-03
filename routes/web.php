@@ -40,6 +40,7 @@ Route::middleware('userAuth')->controller(HomeController::class)->group(function
     Route::get('/subject_content/{id}', 'subject_content')->name('web.subject.content');
     Route::get('/sub_cat_subjects/{id}', 'sub_cat_subjects')->name('sub_cat_subjects');
     Route::get('/download/{id}', 'download')->name('download');
+    Route::get('/drives', 'drives')->name('web.drives');
 });
 // Roles
 Route::resource('roles', RoleController::class);

@@ -70,7 +70,7 @@
     <div class="copyright">
         <p class="text-center">
             جميع الحقوق محفوظة &copy; <a href="https://api.whatsapp.com/send?phone=201221093210"
-                target="blank">Eng-Bherey</a>
+                target="blank">Ai Education</a>
         </p>
     </div>
 </footer>

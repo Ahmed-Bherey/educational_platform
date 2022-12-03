@@ -24,7 +24,7 @@
                                 <div class="card-body">
                                     {{-- row 1 --}}
                                     <div class="row mb-3">
-                                        <div class="col-sm-4 form-floating">
+                                        <div class="col-sm-4 form-floating mb-3">
                                             <input required type="text" class="form-control" id="name"
                                                 placeholder="اسم التصنيف" name="name">
                                             <label for="name" class="col-form-label n_ro3ya">اسم التصنيف</label>
@@ -47,7 +47,17 @@
                                                 placeholder="شعار التصنيف" name="icon">
                                             <label for="icon" class="col-form-label n_ro3ya">شعار التصنيف</label>
                                         </div>
-                                        <div class="col-sm-4 form-floating mt-3">
+                                        <div class="col-sm-4 form-floating">
+                                            <input type="text" class="form-control" id="color"
+                                                placeholder="لون التصنيف" name="color">
+                                            <label for="color" class="col-form-label n_ro3ya">لون التصنيف</label>
+                                        </div>
+                                        <div class="col-sm-4 form-floating">
+                                            <input type="text" class="form-control" id="icon_color"
+                                                placeholder="لون الشعار" name="icon_color">
+                                            <label for="icon_color" class="col-form-label n_ro3ya">لون الشعار</label>
+                                        </div>
+                                        <div class="col-sm-4 form-floating">
                                             <textarea class="form-control" rows="1" placeholder="ملاحظات ..." name="notes" id="notes"></textarea>
                                             <label for="notes" class=" col-form-label n_ro3ya">ملاحظات </label>
                                         </div>

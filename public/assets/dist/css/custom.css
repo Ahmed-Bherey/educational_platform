@@ -33,7 +33,7 @@ form label {
 }
 
 table thead {
-    background-color: #F47521;
+    background-color: #47bd96;
     ;
     color: white;
     font-size: 14px;
@@ -72,12 +72,12 @@ table thead {
 }
 
 .header-bg {
-    background-color: #F47521;
+    background-color: #47bd96;
     ;
 }
 
 .bg-origin {
-    background-color: #F47521;
+    background-color: #47bd96;
 }
 
 .bg-green {
@@ -85,7 +85,7 @@ table thead {
 }
 
 .bg-success-2 {
-    background-color: #F47521;
+    background-color: #47bd96;
 }
 
 .bg-success-2 :hover {
@@ -97,7 +97,7 @@ table thead {
 }
 
 .origin-1 {
-    color: #F47521;
+    color: #47bd96;
 }
 
 .green-1 {
@@ -341,7 +341,7 @@ td {
 }
 
 .login-box-msg {
-    color: #F47521;
+    color: #47bd96;
     font-weight: 800;
 }
 
@@ -357,7 +357,7 @@ td {
 }
 
 .main-footer a {
-    color: #f47521;
+    color: #47bd96;
 }
 
 .mr-auto-navbav {
@@ -651,7 +651,7 @@ textarea {
 }
 .heading .heading_div {
     width: 85%;
-    background-color: #f47521;
+    background-color: #47bd96;
 }
 .content-wrapper textarea{
     min-height: 70px;

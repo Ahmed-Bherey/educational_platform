@@ -26,7 +26,7 @@ class UserLoginController extends Controller
         ])) {
             return redirect()->route('web.index')->with(['success' => 'مرحبا ' . auth()->guard('member')->user()->name . ' 😇']);
         } else {
-            return redirect()->back()->with(['error' => '😕  ' . 'هناك خطا بالبيانات']);
+            return redirect()->back()->with(['error' => 'هناك خطا بالبيانات' . ' 😕']);
         }
     }
 
@@ -39,7 +39,7 @@ class UserLoginController extends Controller
         Artisan::call('cache:clear');
         return redirect()
             ->route('web.index')
-            ->with(['success' => '☹️ ' . 'تم الخروج بنجاح']);
+            ->with(['success' => 'تم الخروج بنجاح' .' ☹️' ]);
     }
 
     public function registerForm()

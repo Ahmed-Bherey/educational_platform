@@ -9,11 +9,11 @@
                     <div class="col-sm-12 col-lg-12">
                         <div class="card">
                             <div class="card-header header-bg">
-                                <h3 class="card-title header-title">اضافة تصنيف فرعى</h3>
+                                <h3 class="card-title header-title">اضافة ملف لمجلد</h3>
                             </div>
                             @include('admin.layouts.alerts.success')
                             @include('admin.layouts.alerts.error')
-                            <form class="form-horizontal" action="{{ route('subCategory.store') }}" method="POST"
+                            <form class="form-horizontal" action="{{ route('driveFile.store') }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
@@ -26,18 +26,18 @@
                                             </label>
                                         </div>
                                         <div class="col-sm-4 form-floating mb-3">
-                                            <select required class="form-control" name="category_id" id="category_id">
-                                                <option value="">اختر التصنيف الرئيسى</option>
-                                                @foreach ($categories as $key => $category)
-                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            <select required="required" class="form-control" name="drive_id" id="drive_id">
+                                                <option value="">اختر المجلد</option>
+                                                @foreach ($drives as $key => $drive)
+                                                    <option value="{{ $drive->id }}">{{ $drive->name }}</option>
                                                 @endforeach
                                             </select>
-                                            <label for="category_id" class="col-form-label">اختر التصنيف الرئيسى</label>
+                                            <label for="drive_id" class="col-form-label">اختر المجلد</label>
                                         </div>
                                         <div class="col-sm-4 form-floating mb-3">
-                                            <input type="text" class="form-control" id="name" placeholder="الاسم"
-                                                name="name" required>
-                                            <label for="name" class="col-sm-3 col-form-label">الاسم</label>
+                                            <input type="text" class="form-control" id="name"
+                                                placeholder="اسم الملف" name="name">
+                                            <label for="name" class="col-form-label">اسم الملف</label>
                                         </div>
                                         <div class="col-sm-4 form-floating mb-3">
                                             <div class="heading d-flex" id="btn_img">
@@ -53,34 +53,49 @@
                                             <label for="img" class="col-form-label">اضف صورة
                                             </label>
                                         </div>
-                                        <div class="col-sm-4 form-floating">
-                                            <input required type="text" class="form-control" id="icon"
-                                                placeholder="شعار التصنيف" name="icon">
-                                            <label for="icon" class="col-form-label n_ro3ya">شعار التصنيف</label>
+                                        <div class="col-sm-4 form-floating mb-3">
+                                            <div class="heading d-flex" id="btn_file">
+                                                <div class="icon"><i class="fa-regular fa-file"></i></div>
+                                                <div class="heading_div" id="auther">
+                                                    اضف ملف الشرح
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-sm-4 form-floating">
-                                            <input type="text" class="form-control" id="color"
-                                                placeholder="لون التصنيف" name="color">
-                                            <label for="color" class="col-form-label n_ro3ya">لون التصنيف</label>
-                                        </div>
-                                        <div class="col-sm-4 form-floating">
-                                            <input type="text" class="form-control" id="icon_color"
-                                                placeholder="لون الشعار" name="icon_color">
-                                            <label for="icon_color" class="col-form-label n_ro3ya">لون الشعار</label>
+                                        <div class="col-sm-4 form-floating mb-3" hidden>
+                                            <input type="file" class="form-control" id="upload_file"
+                                                placeholder="اضف ملف الشرح" name="file">
+                                            <label for="file" class="col-form-label">اضف ملف الشرح
+                                            </label>
                                         </div>
                                         <div class="col-sm-4 form-floating mb-3">
-                                            <textarea class="form-control" rows="1" placeholder="ملاحظات ..." name="notes" id="note"></textarea>
-                                            <label for="note" class="col-form-label">ملاحظات
+                                            <div class="heading d-flex" id="btn_video">
+                                                <div class="icon"><i class="fa-regular fa-circle-play"></i></div>
+                                                <div class="heading_div" id="auther">
+                                                    اضف فيديو الشرح
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 form-floating mb-3" hidden>
+                                            <input type="file" class="form-control" id="upload_video"
+                                                placeholder="اضف صورة" name="video">
+                                            <label for="video" class="col-form-label">اضف فيديو الشرح
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-4 form-floating mb-3">
+                                            <textarea class="form-control" rows="1" placeholder="نبذة ..." name="notes" id="note"></textarea>
+                                            <label for="note" class="col-form-label">نبذة
                                             </label>
                                         </div>
                                     </div>
+                                    {{-- row 1 --}}
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">
                                     <button type="submit" class="btn bg-success-2 mr-3">
                                         <i class="fa fa-check text-light" aria-hidden="true"></i>
                                     </button>
-                                    <button type="reset" class="btn bg-secondary" onclick="history.back()" type="submit">
+                                    <button type="reset" class="btn bg-secondary" onclick="history.back()"
+                                        type="submit">
                                         <i class="fas fa-undo"></i>
                                     </button>
                                 </div>
@@ -89,12 +104,12 @@
                         </div>
                     </div>
                 </div>
-                {{-- start card table --}}
-                <div class="row">
-                    <div class="col-sm-12 col-lg-12">
+                <div class="row mt-1">
+                    <div class="col-sm-12 col-md-12  col-lg-12 col-xl-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title" style="float:right; font-weight:bold;">التصنيفات الفرعية</h3>
+                                <h3 class="card-title" style="float:right; font-weight:bold;">الملفات
+                                </h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -108,30 +123,28 @@
                                                     <tr>
                                                         <td>#</td>
                                                         <td>التاريخ</td>
-                                                        <td>التصنيف الرئيسى</td>
-                                                        <td>الاسم</td>
+                                                        <td>اسم المجلد</td>
+                                                        <td>اسم الملف</td>
                                                         <td>الصورة</td>
-                                                        <td>ملاحظات</td>
                                                         <td>عمليات</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($subCategories as $key => $subCategory)
+                                                    @foreach ($driveFiles as $key => $driveFile)
                                                         <tr class="odd">
                                                             <td>{{ $loop->iteration }}</td>
-                                                            <td>{{ $subCategory->date }}</td>
-                                                            <td>{{ $subCategory->categories->name }}</td>
-                                                            <td>{{ $subCategory->name }}</td>
+                                                            <td>{{ $driveFile->date }}</td>
+                                                            <td>{{ $driveFile->drives->name }}</td>
+                                                            <td>{{ $driveFile->name }}</td>
                                                             <td>
-                                                                <img src="{{ asset('/public/' . Storage::url($subCategory->img)) }}"
+                                                                <img src="{{ asset('/public/' . Storage::url($driveFile->img)) }}"
                                                                     id="imgshow" height="50vh">
                                                             </td>
-                                                            <td>{{ $subCategory->notes }}</td>
                                                             <td>
-                                                                <a href="{{ route('subCategory.edit', $subCategory->id) }}"
+                                                                <a href="{{ route('driveFile.edit', $driveFile->id) }}"
                                                                     type="submit" class="btn bg-secondary"><i
                                                                         class="far fa-edit" aria-hidden="true"></i></a>
-                                                                <a href="{{ route('subCategory.destroy', $subCategory->id) }}"
+                                                                <a href="{{ route('driveFile.destroy', $driveFile->id) }}"
                                                                     type="submit"
                                                                     onclick="return confirm('Are you sure?')"
                                                                     class="btn btn-danger"><i
@@ -145,22 +158,32 @@
                                     </div>
                                     <!-- /.card-body -->
                                 </div>
-                                {{-- end card table --}}
-                            </div><!-- /.container-fluid -->
+                                {{-- end table --}}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div><!-- /.container-fluid -->
+            </div>
         </div>
-        <!-- /.content-header -->
     </div>
-
     <script>
         let btnImg = document.getElementById('btn_img'),
-            imgFile = document.getElementById('upload_img');
+            btnVideo = document.getElementById('btn_video'),
+            imgFile = document.getElementById('upload_img'),
+            btnFile = document.getElementById('btn_file'),
+            uploadFile = document.getElementById('upload_file'),
+            videoFile = document.getElementById('upload_video');
 
         btnImg.addEventListener('click', () => {
             imgFile.click()
+        })
+
+        btnFile.addEventListener('click', () => {
+            uploadFile.click()
+        })
+
+        btnVideo.addEventListener('click', () => {
+            videoFile.click()
         })
     </script>
 @endsection

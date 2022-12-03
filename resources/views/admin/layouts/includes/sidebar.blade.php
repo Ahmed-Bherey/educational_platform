@@ -92,6 +92,58 @@
                         <p>اضافة دروس</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon green-1"></i>
+                        <p>
+                            اضافة اعلانات
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('ads.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>الاعلان الاول</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('ad2s.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>الاعلان الثانى</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('ad3s.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>الاعلان الثالث</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon green-1"></i>
+                        <p>
+                            المجلدات
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('drives.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>اضافة مجلد</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('driveFile.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>اضافة ملف لمجلد</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
             </ul>
         </nav>

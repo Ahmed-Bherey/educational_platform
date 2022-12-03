@@ -54,6 +54,17 @@
                                                     name="icon">
                                                 <label for="icon" class="col-form-label n_ro3ya">شعار التصنيف</label>
                                             </div>
+                                            <div class="col-sm-4 form-floating">
+                                                <input type="text" class="form-control"
+                                                    value="{{ $category->color }}" id="color" placeholder="لون التصنيف"
+                                                    name="color">
+                                                <label for="color" class="col-form-label n_ro3ya">لون التصنيف</label>
+                                            </div>
+                                            <div class="col-sm-4 form-floating">
+                                                <input type="text" class="form-control" value="{{ $category->icon_color }}" id="icon_color"
+                                                    placeholder="لون الشعار" name="icon_color">
+                                                <label for="icon_color" class="col-form-label n_ro3ya">لون الشعار</label>
+                                            </div>
                                         </div>
                                         <div class="col-md-3">
                                             <img src="{{ asset('/public/' . Storage::url($category->img)) }}"

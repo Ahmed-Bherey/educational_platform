@@ -31,5 +31,16 @@
                 </div>
             </div>
         </section>
+        @isset($ad2s->img)
+            <section class="ads text-center mb-3 mt-3" data-aos="fade-up">
+                <div class="container">
+                    <div class="ad_img">
+                        <a href="{{ $ad2s->link }}" target="blank">
+                            <img src="{{ asset('/public/' . Storage::url($ad2s->img)) }}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </section>
+        @endisset
     </div>
 @endsection

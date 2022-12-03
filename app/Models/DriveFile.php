@@ -3,23 +3,22 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Category;
+use App\Models\Drive;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class SubCategory extends Model
+class DriveFile extends Model
 {
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'category_id',
+        'drive_id',
         'date',
-        'name',
-        'color',
-        'icon_color',
         'img',
+        'file',
+        'video',
+        'name',
         'notes',
-        'icon',
     ];
 
     public function users()
@@ -27,8 +26,8 @@ class SubCategory extends Model
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    public function categories()
+    public function drives()
     {
-        return $this->belongsTo(Category::class, 'category_id', 'id');
+        return $this->belongsTo(Drive::class, 'drive_id', 'id');
     }
 }

@@ -26,6 +26,8 @@ class CategoryController extends Controller
         $category = Category::create([
             'user_id' => Auth::user()->id,
             'name' => $request->name,
+            'color' => $request->color,
+            'icon_color' => $request->icon_color,
             'img' => $img,
             'notes' => $request->notes,
             'icon' => $request->icon,
@@ -63,6 +65,8 @@ class CategoryController extends Controller
         $category->update([
             'user_id' => Auth::user()->id,
             'name' => $request->name,
+            'color' => $request->color,
+            'icon_color' => $request->icon_color,
             'img' => $img,
             'notes' => $request->notes,
             'icon' => $request->icon,

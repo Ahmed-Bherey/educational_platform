@@ -8,6 +8,17 @@
                 </div>
             </div>
         </section>
+        @isset($ad2s->img)
+            <section class="ads text-center mb-3 mt-3" data-aos="fade-up">
+                <div class="container">
+                    <div class="ad_img">
+                        <a href="{{ $ad2s->link }}" target="blank">
+                            <img src="{{ asset('/public/' . Storage::url($ad2s->img)) }}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </section>
+        @endisset
         @if ($sub_cat_subjects->isEmpty())
             <h3 class="text-center text-danger">لم يتم اضافة دروس ل {{ $sub_cat_subject->name }} بعد</h3>
         @else
@@ -24,7 +35,7 @@
                                                 alt="">
                                         </div>
                                         <div class="subject__all_title position-absolute text-end">
-                                            <h3 class="title fw-bold">
+                                            <h3 class="title fw-bold text-center">
                                                 <a href="#"
                                                     class="text-decoration-none">{{ $sub_cat_subject->name }}</a>
                                             </h3>
@@ -44,5 +55,16 @@
                 </div>
             </section>
         @endif
+        @isset($ad3s->img)
+            <section class="ads text-center mb-3 mt-3" data-aos="fade-up">
+                <div class="container">
+                    <div class="ad_img">
+                        <a href="{{ $ad3s->link }}" target="blank">
+                            <img src="{{ asset('/public/' . Storage::url($ad3s->img)) }}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </section>
+        @endisset
     </div>
 @endsection
