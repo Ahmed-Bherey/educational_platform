@@ -14,6 +14,7 @@ use App\Models\CategoryTotal;
 use App\Models\GeneralSetting;
 use App\Http\Controllers\Controller;
 use App\Models\Drive;
+use App\Models\DriveFile;
 
 class HomeController extends Controller
 {
@@ -124,5 +125,29 @@ class HomeController extends Controller
         $ad3s = Ad3::first();
         $drives = Drive::get();
         return view('web.pages.drives', compact('drives', 'ads', 'ad2s', 'ad3s', 'categories', 'generalSetting'));
+    }
+
+    public function driveFiles($id)
+    {
+        $generalSetting = GeneralSetting::first();
+        $categories = Category::get();
+        $ads = Ad::first();
+        $ad2s = Ad2::first();
+        $ad3s = Ad3::first();
+        $drive = Drive::findOrFail($id);
+        $driveFiles = DriveFile::where('drive_id',$id)->get();
+        return view('web.pages.driveFiles', compact('drive','driveFiles', 'ads', 'ad2s', 'ad3s', 'categories', 'generalSetting'));
+    }
+
+    public function driveFiles_content($id)
+    {
+        $generalSetting = GeneralSetting::first();
+        $categories = Category::get();
+        $ads = Ad::first();
+        $ad2s = Ad2::first();
+        $ad3s = Ad3::first();
+        $drive = Drive::get();
+        $driveFile = DriveFile::findOrFail($id);
+        return view('web.pages.driveFiles_content', compact('driveFile', 'drives', 'ads', 'ad2s', 'ad3s', 'categories', 'generalSetting'));
     }
 }

@@ -84,6 +84,7 @@
             <li><a href="{{url('/#categories')}}">التصنيفات</a></li>
             <li><a href="{{ route('web.subjectsAll') }}">اخر التحديثات</a></li>
             @if (Auth('member')->check())
+            <li><a href="{{ route('web.drives') }}">المجلدات</a></li>
             <li><a href="{{ route('user.logout') }}">تسجيل خروج</a></li>
             @else
             <li><a href="{{ route('user.login.form') }}">تسجيل الدخول</a></li>

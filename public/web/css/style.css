@@ -287,7 +287,9 @@ header .main .banner {
     direction: rtl;
     margin: 50px 0;
 }
-
+.categories .cat_box .cat_box_content{
+    width: 100%;
+}
 .categories .cat_box .cat_box_content .main_cat p {
     border: 1px solid var(--second);
     padding: 7px 0;
@@ -715,6 +717,35 @@ footer .copyright a {
     color: var(--header);
 }
 /*------------ End Designing Drives Page --------------*/
+
+/*------------ Start Designing DriveFile Page --------------*/
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_img img{
+    /* max-width: 100%; */
+    max-height: 200px;
+    min-height: 200px;
+    border: 1px solid var(--header);
+}
+.driveFile_page .driveFile .driveFile_box .driveFile_content{
+    width: fit-content;
+}
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info{
+    border: 1px solid var(--header);
+    padding: 7px 0;
+    border-top: none;
+}
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info a{
+    width: 48%;
+}
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info p{
+    font-size: 20px;
+    background-color: var(--header);
+    width: 96%;
+    margin: auto;
+    padding: 7px;
+    color: var(--white);
+    margin-bottom: 10px
+}
+/*------------ End Designing DriveFile Page --------------*/
 
 /*------------ Start Designing Subject Details Page --------------*/
 .subject_all video {
