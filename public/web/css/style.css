@@ -21,10 +21,13 @@
 .wrraber {
     min-height: 60vh;
 }
+
 @font-face {
     font-family: 'myFont';
     src: url('../../web/fonts/ElMessiri-VariableFont_wght.ttf');
+    /* src: url('../../fonts/Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf'); */
 }
+
 /*------------ End Designing Default --------------*/
 
 /*------------ Start Designing header --------------*/
@@ -65,7 +68,7 @@ header .nav ul li ul li a {
 }
 
 header .main .nav_content .nav ul li a:hover {
-    color: var(--second);
+    color: var(--header);
     font-weight: bold;
 }
 
@@ -277,9 +280,10 @@ header .main .banner {
 /*------------ End Designing Banner --------------*/
 
 /*------------ Start Designing Ads Section --------------*/
-.ads .ad_img img{
+.ads .ad_img img {
     max-width: 100%;
 }
+
 /*------------ End Designing Ads Section --------------*/
 
 /*------------ Start Designing Categories Section --------------*/
@@ -287,9 +291,11 @@ header .main .banner {
     direction: rtl;
     margin: 50px 0;
 }
-.categories .cat_box .cat_box_content{
+
+.categories .cat_box .cat_box_content {
     width: 100%;
 }
+
 .categories .cat_box .cat_box_content .main_cat p {
     border: 1px solid var(--second);
     padding: 7px 0;
@@ -319,7 +325,9 @@ header .main .banner {
     -ms-border-radius: 0;
     -o-border-radius: 0;
 }
-.categories .cat_box .cat_box_content .main_cat .icon svg{
+
+.categories .cat_box .cat_box_content .main_cat .icon svg,
+.categories .cat_box .cat_box_content .sub_cat .icon svg {
     font-size: 20px;
     padding-top: 4px;
 }
@@ -333,16 +341,13 @@ header .main .banner {
     -ms-border-radius: 0 0 0 0;
     -o-border-radius: 0 0 0 0;
 }
-.categories .cat_box .cat_box_content .sub_cat .icon svg{
-    font-size: 20px;
-    padding-top: 4px;
-}
+
 .categories .cat_box .cat_box_content .sub_cat a {
     padding: 7px 0;
     background-color: var(--second);
     font-weight: bold;
     color: var(--white);
-    font-size: 17px;
+    font-size: 20px;
     width: 100%;
     border-radius: 0 0 0 0;
     -webkit-border-radius: 0 0 0 0;
@@ -558,7 +563,8 @@ footer .footer_box .box_content a {
     font-size: 20px;
     font-weight: 500;
 }
-footer .footer_box .box_content a:hover{
+
+footer .footer_box .box_content a:hover {
     color: var(--main-color);
     font-weight: bold;
 }
@@ -584,7 +590,7 @@ footer .copyright {
 }
 
 footer .copyright a {
-    color: var(--head);
+    color: #cf2718;
     text-decoration: none;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -690,7 +696,7 @@ footer .copyright a {
 /*------------ End Designing Supject Page --------------*/
 
 /*------------ Start Designing Drives Page --------------*/
-.drives_page .drives .drive_box .drive_content{
+.drives_page .drives .drive_box .drive_content {
     background-color: var(--header);
     border: 2px solid var(--header);
     padding: 7px;
@@ -701,11 +707,13 @@ footer .copyright a {
     -ms-transition: .7s ease-in-out;
     -o-transition: .7s ease-in-out;
 }
-.drives_page .drives .drive_box .drive_content:hover{
+
+.drives_page .drives .drive_box .drive_content:hover {
     background-color: var(--white);
     border: 2px solid var(--header);
 }
-.drives_page .drives .drive_box .drive_content a{
+
+.drives_page .drives .drive_box .drive_content a {
     color: var(--white);
     transition: .7s ease-in-out;
     -webkit-transition: .7s ease-in-out;
@@ -713,30 +721,36 @@ footer .copyright a {
     -ms-transition: .7s ease-in-out;
     -o-transition: .7s ease-in-out;
 }
-.drives_page .drives .drive_box .drive_content:hover a{
+
+.drives_page .drives .drive_box .drive_content:hover a {
     color: var(--header);
 }
+
 /*------------ End Designing Drives Page --------------*/
 
 /*------------ Start Designing DriveFile Page --------------*/
-.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_img img{
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_img img {
     /* max-width: 100%; */
     max-height: 200px;
     min-height: 200px;
     border: 1px solid var(--header);
 }
-.driveFile_page .driveFile .driveFile_box .driveFile_content{
+
+.driveFile_page .driveFile .driveFile_box .driveFile_content {
     width: fit-content;
 }
-.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info{
+
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info {
     border: 1px solid var(--header);
     padding: 7px 0;
     border-top: none;
 }
-.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info a{
+
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info a {
     width: 48%;
 }
-.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info p{
+
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info p {
     font-size: 20px;
     background-color: var(--header);
     width: 96%;
@@ -745,6 +759,7 @@ footer .copyright a {
     color: var(--white);
     margin-bottom: 10px
 }
+
 /*------------ End Designing DriveFile Page --------------*/
 
 /*------------ Start Designing Subject Details Page --------------*/
@@ -848,11 +863,16 @@ footer .copyright a {
     display: none;
 }
 
-.nav_content .nav ul li a:hover{
-    background-color: aqua;
-    padding: 7px 12px;
-    border-radius: 5px;
+.nav_content .nav ul li a:hover {
+    background-color: #5df1c0;
+    padding: 10px 12px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
+
 /*------------ End Go To Top Style ------------------*/
 
 .sticky_navbar {
