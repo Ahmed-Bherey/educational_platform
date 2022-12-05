@@ -166,6 +166,7 @@
             </div>
         </div>
     </div>
+
     <script>
         let btnImg = document.getElementById('btn_img'),
             btnVideo = document.getElementById('btn_video'),

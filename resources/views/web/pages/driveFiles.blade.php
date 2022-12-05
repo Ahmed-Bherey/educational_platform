@@ -16,8 +16,8 @@
                     <div class="container">
                         <div class="row">
                             @foreach ($driveFiles as $key => $driveFile)
-                                <div class="col-12 col-md-6 col-lg-4 col-xl-3 driveFile_box mb-3">
-                                    <div class="driveFile_content text-center m-auto">
+                                <div class="col-12 col-md-6 col-lg-4 col-xl-3 driveFile_box mb-3 d-flex justify-content-center">
+                                    <div class="driveFile_content text-center">
                                         <div class="driveFile_img">
                                             <img src="{{ asset('/public/' . Storage::url($driveFile->img)) }}"
                                                 alt="">

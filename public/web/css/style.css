@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: 'myFont';
-    src: url('../../web/fonts/ElMessiri-VariableFont_wght.ttf');
+    src: url('../../web/fonts/NotoNaskhArabic-VariableFont_wght.ttf');
     /* src: url('../../fonts/Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf'); */
 }
 
@@ -335,6 +335,7 @@ header .main .banner {
 .categories .cat_box .cat_box_content .sub_cat .icon {
     background-color: var(--main-color);
     color: var(--white);
+    padding-left: 18px;
     border-radius: 0 0 0 0;
     -webkit-border-radius: 0 0 0 0;
     -moz-border-radius: 0 0 0 0;
@@ -696,6 +697,9 @@ footer .copyright a {
 /*------------ End Designing Supject Page --------------*/
 
 /*------------ Start Designing Drives Page --------------*/
+.drives_page{
+    margin: 50px 0;
+}
 .drives_page .drives .drive_box .drive_content {
     background-color: var(--header);
     border: 2px solid var(--header);
@@ -733,6 +737,8 @@ footer .copyright a {
     /* max-width: 100%; */
     max-height: 200px;
     min-height: 200px;
+    min-width: 280px;
+    max-width: 280px;
     border: 1px solid var(--header);
 }
 
@@ -743,6 +749,7 @@ footer .copyright a {
 .driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info {
     border: 1px solid var(--header);
     padding: 7px 0;
+    background-color: currentColor;
     border-top: none;
 }
 

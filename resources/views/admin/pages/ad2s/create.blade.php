@@ -114,18 +114,38 @@
                                                 <tbody>
                                                     <tr class="odd">
                                                         <td>1</td>
-                                                        <td>{{ $ad2s->date }}</td>
-                                                        <td>{{ $ad2s->name }}</td>
                                                         <td>
-                                                            <img src="{{ asset('/public/' . Storage::url($ad2s->img)) }}"
-                                                                id="imgshow" height="50vh">
+                                                            @isset($ad2s->date)
+                                                                {{ $ad2s->date }}
+                                                            @endisset
                                                         </td>
-                                                        <td>{{ $ad2s->link }}</td>
-                                                        <td>{{ $ad2s->notes }}</td>
                                                         <td>
-                                                            <a href="{{ route('ad2s.destroy', $ad2s->id) }}" type="submit"
-                                                                onclick="return confirm('Are you sure?')"
-                                                                class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                            @isset($ad2s->name)
+                                                                {{ $ad2s->name }}
+                                                            @endisset
+                                                        </td>
+                                                        <td>
+                                                            @isset($ad2s->img)
+                                                                <img src="{{ asset('/public/' . Storage::url($ad2s->img)) }}"
+                                                                    id="imgshow" height="50vh">
+                                                            @endisset
+                                                        </td>
+                                                        <td>
+                                                            @isset($ad2s->link)
+                                                                {{ $ad2s->link }}
+                                                            @endisset
+                                                        </td>
+                                                        <td>
+                                                            @isset($ad2s->notes)
+                                                                {{ $ad2s->notes }}
+                                                            @endisset
+                                                        </td>
+                                                        <td>
+                                                            @isset($ad2s)
+                                                                <a href="{{ route('ad2s.destroy', $ad2s->id) }}" type="submit"
+                                                                    onclick="return confirm('Are you sure?')"
+                                                                    class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                            @endisset
                                                         </td>
                                                     </tr>
                                                 </tbody>

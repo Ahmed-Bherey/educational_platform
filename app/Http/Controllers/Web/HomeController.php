@@ -148,6 +148,6 @@ class HomeController extends Controller
         $ad3s = Ad3::first();
         $drive = Drive::get();
         $driveFile = DriveFile::findOrFail($id);
-        return view('web.pages.driveFiles_content', compact('driveFile', 'drives', 'ads', 'ad2s', 'ad3s', 'categories', 'generalSetting'));
+        return view('web.pages.driveFiles_content', compact('driveFile', 'drive', 'ads', 'ad2s', 'ad3s', 'categories', 'generalSetting'));
     }
 }
