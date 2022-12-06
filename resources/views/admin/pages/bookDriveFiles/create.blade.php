@@ -9,11 +9,11 @@
                     <div class="col-sm-12 col-lg-12">
                         <div class="card">
                             <div class="card-header header-bg">
-                                <h3 class="card-title header-title">اضافة ملف لمجلد</h3>
+                                <h3 class="card-title header-title">اضافة كتاب جامعة</h3>
                             </div>
                             @include('admin.layouts.alerts.success')
                             @include('admin.layouts.alerts.error')
-                            <form class="form-horizontal" action="{{ route('driveFile.store') }}" method="POST"
+                            <form class="form-horizontal" action="{{ route('bookDriveFile.store') }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-body">
@@ -26,28 +26,32 @@
                                             </label>
                                         </div>
                                         <div class="col-sm-4 form-floating mb-3">
-                                            <select required="required" class="form-control" name="drive_id" id="drive_id">
-                                                <option value="">اختر المجلد</option>
-                                                @foreach ($drives as $key => $drive)
-                                                    <option value="{{ $drive->id }}">{{ $drive->name }}</option>
+                                            <select required="required" class="form-control" name="bookDrive_id"
+                                                id="bookDrive_id">
+                                                <option value="">اختر تصنيف الكتاب</option>
+                                                @foreach ($bookDrives as $key => $bookDrive)
+                                                    <option value="{{ $bookDrive->id }}">{{ $bookDrive->name }}</option>
                                                 @endforeach
                                             </select>
-                                            <label for="drive_id" class="col-form-label">اختر المجلد</label>
-                                        </div>
-                                        <div class="col-sm-4 form-floating mb-3">
-                                            <select required="required" class="form-control" name="file_type"
-                                                id="file_type">
-                                                <option value="">اختر نوع الملف</option>
-                                                <option value="1">PDF</option>
-                                                <option value="2">Power Point</option>
-                                                <option value="3">Video</option>
-                                            </select>
-                                            <label for="file_type" class="col-form-label">اختر نوع الملف</label>
+                                            <label for="bookDrive_id" class="col-form-label">اختر تصنيف الكتاب</label>
                                         </div>
                                         <div class="col-sm-4 form-floating mb-3">
                                             <input type="text" class="form-control" id="name"
-                                                placeholder="اسم الملف" name="name">
-                                            <label for="name" class="col-form-label">اسم الملف</label>
+                                                placeholder="اسم الكتاب" name="name">
+                                            <label for="name" class="col-form-label">اسم الكتاب</label>
+                                        </div>
+                                        <div class="col-sm-4 form-floating">
+                                            <div class="heading d-flex" id="btn_img">
+                                                <div class="icon"><i class="fa-regular fa-image"></i></div>
+                                                <div class="heading_div" id="auther">
+                                                    اضف صورة
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 form-floating" hidden>
+                                            <input type="file" class="form-control" id="upload_img"
+                                                placeholder="صورة التصنيف" name="img">
+                                            <label for="img" class="col-form-label n_ro3ya">صورة التصنيف</label>
                                         </div>
                                         <div class="col-sm-4 form-floating mb-3">
                                             <div class="heading d-flex" id="btn_file">
@@ -89,7 +93,7 @@
                     <div class="col-sm-12 col-md-12  col-lg-12 col-xl-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title" style="float:right; font-weight:bold;">الملفات
+                                <h3 class="card-title" style="float:right; font-weight:bold;">الكتب الجامعية
                                 </h3>
                             </div>
                             <!-- /.card-header -->
@@ -104,33 +108,28 @@
                                                     <tr>
                                                         <td>#</td>
                                                         <td>التاريخ</td>
-                                                        <td>اسم المجلد</td>
-                                                        <td>اسم الملف</td>
-                                                        <td>نوع الملف</td>
+                                                        <td>تصنيف الكتاب</td>
+                                                        <td>اسم الكتاب</td>
+                                                        <td>صورة الكتاب</td>
                                                         <td>عمليات</td>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach ($driveFiles as $key => $driveFile)
+                                                    @foreach ($bookDriveFiles as $key => $bookDriveFile)
                                                         <tr class="odd">
                                                             <td>{{ $loop->iteration }}</td>
-                                                            <td>{{ $driveFile->date }}</td>
-                                                            <td>{{ $driveFile->drives->name }}</td>
-                                                            <td>{{ $driveFile->name }}</td>
+                                                            <td>{{ $bookDriveFile->date }}</td>
+                                                            <td>{{ $bookDriveFile->book_drives->name }}</td>
+                                                            <td>{{ $bookDriveFile->name }}</td>
                                                             <td>
-                                                                @if ($driveFile->file_type == 1)
-                                                                    PDF
-                                                                @elseif($driveFile->file_type == 2)
-                                                                    Power Point
-                                                                @else
-                                                                    Video
-                                                                @endif
+                                                                <img src="{{ asset('/public/' . Storage::url($bookDriveFile->img)) }}"
+                                                                    id="imgshow" height="50vh">
                                                             </td>
                                                             <td>
-                                                                <a href="{{ route('driveFile.edit', $driveFile->id) }}"
+                                                                <a href="{{ route('bookDriveFile.edit', $bookDriveFile->id) }}"
                                                                     type="submit" class="btn bg-secondary"><i
                                                                         class="far fa-edit" aria-hidden="true"></i></a>
-                                                                <a href="{{ route('driveFile.destroy', $driveFile->id) }}"
+                                                                <a href="{{ route('bookDriveFile.destroy', $bookDriveFile->id) }}"
                                                                     type="submit"
                                                                     onclick="return confirm('Are you sure?')"
                                                                     class="btn btn-danger"><i
@@ -155,10 +154,16 @@
 
     <script>
         let btnFile = document.getElementById('btn_file'),
-            uploadFile = document.getElementById('upload_file');
+            uploadFile = document.getElementById('upload_file'),
+            btnImg = document.getElementById('btn_img'),
+            imgFile = document.getElementById('upload_img');
 
         btnFile.addEventListener('click', () => {
             uploadFile.click()
+        })
+
+        btnImg.addEventListener('click', () => {
+            imgFile.click()
         })
     </script>
 @endsection

@@ -1,20 +1,20 @@
 @extends('web.layouts.includes.main')
 @section('content')
     <div class="wrraber">
-        <div class="drives_page">
+        <div class="bookDrives_bage">
             <section class="drives">
                 <div class="container">
                     <div class="row">
-                        @foreach ($drives as $key => $drive)
+                        @foreach ($bookDrives as $key => $bookDrive)
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 drive_box" data-aos="fade-up">
                                 <div class="drive_content mb-3">
                                     <div class="d-flex">
-                                        <div class="drive_icon"><i class="fa-solid fa-folder"></i></div>
-                                        <a href="{{ route('web.driveFiles', $drive->id) }}"
+                                        <div class="drive_icon"><i class="fa-solid fa-book-open"></i></div>
+                                        <a href="{{ route('web.bookDriveFile', $bookDrive->id) }}"
                                             class="text-decoration-none text-center">
-                                            <div class="drive_name">{{ $drive->name }}</div>
+                                            <div class="drive_name">{{ $bookDrive->name }}</div>
                                         </a>
-                                        <div class="count">{{$drive->drive_files->count()}}</div>
+                                        <div class="count">{{$bookDrive->Book_drive_files->count()}}</div>
                                     </div>
                                 </div>
                             </div>

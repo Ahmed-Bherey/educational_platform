@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('name_ar')->nullable();
             $table->string('name_en')->nullable();
             $table->string('email')->nullable();
-            $table->integer('tel1')->nullable();
-            $table->integer('tel2')->nullable();
-            $table->integer('tel3')->nullable();
+            $table->string('tel1')->nullable();
+            $table->string('tel2')->nullable();
+            $table->string('tel3')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('address')->nullable();

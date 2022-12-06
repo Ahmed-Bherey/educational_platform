@@ -33,16 +33,35 @@ Route::controller(UserLoginController::class)->prefix('user')->group(function ()
 });
 // home
 Route::get('/', [HomeController::class, 'index'])->name('web.index');
-Route::middleware('userAuth')->controller(HomeController::class)->group(function () {
-    Route::get('/subjects/{id}', 'subjects')->name('web.subjects');
-    Route::get('/subjectsAll', 'subjectsAll')->name('web.subjectsAll');
-    Route::get('/subject_details/{id}', 'subject_details')->name('web.subject.details');
-    Route::get('/subject_content/{id}', 'subject_content')->name('web.subject.content');
-    Route::get('/sub_cat_subjects/{id}', 'sub_cat_subjects')->name('sub_cat_subjects');
-    Route::get('/download/{id}', 'download')->name('download');
+// منصة الأولياء والتلاميذ
+Route::prefix('edu-platform')->controller(HomeController::class)->group(function () {
+    Route::get('/', 'eduPlatform')->name('web.eduPlatform');
+    Route::middleware('userAuth')->group(function () {
+        Route::get('/subjects/{id}', 'subjects')->name('web.subjects');
+        Route::get('/subjectsAll', 'subjectsAll')->name('web.subjectsAll');
+        Route::get('/subject_details/{id}', 'subject_details')->name('web.subject.details');
+        Route::get('/subject_content/{id}', 'subject_content')->name('web.subject.content');
+        Route::get('/sub_cat_subjects/{id}', 'sub_cat_subjects')->name('sub_cat_subjects');
+        Route::get('/download/{id}', 'download')->name('download');
+    });
+});
+
+// منصة الأساتذة
+Route::prefix('teacher-platform')->controller(HomeController::class)->group(function () {
     Route::get('/drives', 'drives')->name('web.drives');
-    Route::get('/driveFiles/{id}', 'driveFiles')->name('web.driveFiles');
-    Route::get('/driveFiles_content/{id}', 'driveFiles_content')->name('web.driveFiles.content');
+    Route::middleware('userAuth')->group(function () {
+        Route::get('/driveFiles/{id}', 'driveFiles')->name('web.driveFiles');
+        Route::get('/driveFiles_content/{id}', 'driveFiles_content')->name('web.driveFiles.content');
+    });
+});
+
+// منصة الكتب الجامعية
+Route::prefix('books-platform')->controller(HomeController::class)->group(function () {
+    Route::get('/bookDrive', 'bookDrive')->name('web.bookDrive');
+    Route::middleware('userAuth')->group(function () {
+        Route::get('/bookDriveFile/{id}', 'bookDriveFile')->name('web.bookDriveFile');
+        Route::get('/bookDriveFile_content/{id}', 'bookDriveFile_content')->name('web.bookDriveFile.content');
+    });
 });
 // Roles
 Route::resource('roles', RoleController::class);

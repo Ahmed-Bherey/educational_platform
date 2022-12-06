@@ -8,12 +8,10 @@
                 Al-Education
             </div>
             <ul>
-                <li><a href="{{ route('web.index') }}" class="navLink active">الرئيسية</a></li>
-                <li><a href="{{ url('/#categories') }}" class="navLink active">التصنيفات</a></li>
+                <li><a href="{{ route('web.index') }}" class="navLink active">الرئيسية</a>
+            </li>
+                <li><a href="{{ url('/edu-platform/#categories') }}" class="navLink active">التصنيفات</a></li>
                 <li><a href="{{ route('web.subjectsAll') }}" class="navLink active">اخر التحديثات</a></li>
-                @if (Auth('member')->check())
-                    <li><a href="{{ route('web.drives') }}" class="navLink active">المجلدات</a></li>
-                @endif
                 <li class="d-none"><input type="color" id="coloc_controller"></li>
                 {{-- @foreach ($categories as $category)
                     <li><a href="{{ route('web.subjects', $category->id) }}" class="navLink">{{ $category->name }}</a></li>
@@ -38,11 +36,8 @@
             </div>
             <ul>
                 <li><a href="{{ route('web.index') }}">الرئيسية</a></li>
-                <li><a href="{{ url('/#categories') }}" class="navLink active">التصنيفات</a></li>
+                <li><a href="{{ url('/edu-platform/#categories') }}" class="navLink active">التصنيفات</a></li>
                 <li><a href="{{ route('web.subjectsAll') }}" class="navLink active">اخر التحديثات</a></li>
-                @if (Auth('member')->check())
-                    <li><a href="{{ route('web.drives') }}" class="navLink active">المجلدات</a></li>
-                @endif
                 <li class="d-none"><input type="color" id="coloc_controller"></li>
                 {{-- @foreach ($categories as $category)
                     <li><a href="{{ route('web.subjects', $category->id) }}">{{ $category->name }}</a></li>

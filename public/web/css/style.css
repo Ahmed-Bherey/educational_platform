@@ -101,6 +101,8 @@ header .logo {
     /* font-family: cursive; */
     color: var(--main-color);
     font-weight: bold;
+    border-style: dashed;
+    padding: 5px;
 }
 
 /*------------ End Designing header --------------*/
@@ -537,12 +539,81 @@ header .main .banner {
 footer {
     padding-top: 20px;
     margin-top: 50px;
+    height: 80vh;
     border-top: 1px solid var(--header);
-    background-color: #37f5b5;
+    background-color: var(--header);
     color: var(--footer);
 }
-
 footer .footer_box h4 {
+    color: #f8f9fa;
+    font-size: 25px;
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+footer .footer_box h4 span {
+    border-bottom: #d7d7d7 1px solid;
+}
+footer .footer_box .box_content a {
+    font-size: 20px;
+    padding: 6px 0;
+    color: #f8f9fa;
+    font-weight: 500;
+}
+footer .footer_box .box_content a:hover,
+footer .footer_box .box_content .tel:hover{
+    color: #03f7a6;
+}
+footer .footer_box .box_content .tel{
+    font-size: 14px;
+    padding: 6px 0;
+    color: #f8f9fa;
+}
+footer .footer_icon{
+    margin: 50px 0;
+    justify-content: center;
+}
+footer .footer_icon div{
+    margin: 0 16px;
+    background-color: var(--header);
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--white);
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: .7s ease-in-out;
+    -webkit-transition: .7s ease-in-out;
+    -moz-transition: .7s ease-in-out;
+    -ms-transition: .7s ease-in-out;
+    -o-transition: .7s ease-in-out;
+}
+footer .footer_icon div:hover{
+    background-color: #127454;
+    transform: rotatey(360deg);
+    -webkit-transform: rotatey(360deg);
+    -moz-transform: rotatey(360deg);
+    -ms-transform: rotatey(360deg);
+    -o-transform: rotatey(360deg);
+}
+footer .footer_icon div a{
+    color: #f1f7f6;
+}
+footer .copyright{
+    font-size: 21px;
+    bottom: 0;
+    width: 100%;
+    padding: 7px 0;
+    background-color: #127454;
+}
+footer .copyright p{
+    color: #f8f9fa;
+}
+footer .copyright a{
+    color: #03f7a6;
+    font-family: system-ui;
+}
+/* footer .footer_box h4 {
     font-family: 'Manrope', sans-serif;
     color: var(--footer);
     font-size: 25px;
@@ -594,7 +665,7 @@ footer .copyright a {
     color: #cf2718;
     text-decoration: none;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+} */
 
 /*------------ End Designing Footer --------------*/
 
@@ -607,7 +678,7 @@ footer .copyright a {
     background-size: cover;
     position: relative;
     width: 100%;
-    height: 40vh;
+    height: 15vh;
     border-bottom: var(--header) solid 2px;
 }
 
@@ -697,10 +768,59 @@ footer .copyright a {
 /*------------ End Designing Supject Page --------------*/
 
 /*------------ Start Designing Drives Page --------------*/
-.drives_page{
+.drives_page,
+.bookDrives_bage {
     margin: 50px 0;
 }
-.drives_page .drives .drive_box .drive_content {
+
+.drives_page .drives .drive_box .drive_content .drive_icon,
+.drives_page .drives .drive_box .drive_content .count,
+.bookDrives_bage .drives .drive_box .drive_content .drive_icon,
+.bookDrives_bage .drives .drive_box .drive_content .count {
+    padding: 7px;
+    font-size: 20px;
+    color: var(--white);
+}
+/* 127454    297059*/
+.drives_page .drives .drive_box .drive_content .drive_icon,
+.bookDrives_bage .drives .drive_box .drive_content .drive_icon {
+    background-color: #127454;
+}
+
+.drives_page .drives .drive_box .drive_content .count,
+.bookDrives_bage .drives .drive_box .drive_content .count {
+    padding: 7px 10px;
+    background-color: #297059;
+}
+
+.drives_page .drives .drive_box .drive_content a,
+.bookDrives_bage .drives .drive_box .drive_content a {
+    background-color: var(--header);
+    padding: 7px;
+    font-size: 20px;
+    width: 100%;
+    color: var(--white);
+    transition: .7s ease-in-out;
+    -webkit-transition: .7s ease-in-out;
+    -moz-transition: .7s ease-in-out;
+    -ms-transition: .7s ease-in-out;
+    -o-transition: .7s ease-in-out;
+}
+
+.drives_page .drives .drive_box .drive_content a:hover,
+.bookDrives_bage .drives .drive_box .drive_content a:hover {
+    background-color: #30c997;
+}
+.drives_page .drives .drive_box .drive_content a:hover .count,
+.bookDrives_bage .drives .drive_box .drive_content a:hover .count {
+    background-color: #2b6b7c;
+}
+.drives_page .drives .drive_box .drive_content a:hover .drive_icon,
+.bookDrives_bage .drives .drive_box .drive_content a:hover .drive_icon {
+    background-color: #206072;
+}
+
+/* .drives_page .drives .drive_box .drive_content {
     background-color: var(--header);
     border: 2px solid var(--header);
     padding: 7px;
@@ -728,36 +848,61 @@ footer .copyright a {
 
 .drives_page .drives .drive_box .drive_content:hover a {
     color: var(--header);
-}
+} */
 
 /*------------ End Designing Drives Page --------------*/
 
 /*------------ Start Designing DriveFile Page --------------*/
-.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_img img {
-    /* max-width: 100%; */
-    max-height: 200px;
-    min-height: 200px;
-    min-width: 280px;
-    max-width: 280px;
-    border: 1px solid var(--header);
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_img svg {
+    font-size: 70px;
+    color: #d34c4c;
 }
 
-.driveFile_page .driveFile .driveFile_box .driveFile_content {
+.bookDriveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_img img{
+    max-height: 300px;
+    min-height: 300px;
+    max-width: 225px;
+    min-width: 225px;
+}
+
+.driveFile_page .driveFile .driveFile_box .driveFile_content,
+.bookDriveFile_page .driveFile .driveFile_box .driveFile_content {
     width: fit-content;
+    background-color: #e9ecef;
+    padding: 7px;
+    min-width: 250px;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0px 1px 6px 1px #bfc5cb;
 }
 
-.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info {
-    border: 1px solid var(--header);
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info,
+.bookDriveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info {
     padding: 7px 0;
-    background-color: currentColor;
     border-top: none;
 }
 
-.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info a {
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info a,
+.bookDriveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info a {
     width: 48%;
 }
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info .btn_read,
+.bookDriveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info .btn_read {
+    background-color: #084298;
+    border: none;
+}
 
-.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info p {
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info .btn_download,
+.bookDriveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info .btn_download {
+    background-color: #ab3333;
+    color: var(--white);
+    border: none;
+}
+
+.driveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info p,
+.bookDriveFile_page .driveFile .driveFile_box .driveFile_content .driveFile_info p {
     font-size: 20px;
     background-color: var(--header);
     width: 96%;
@@ -1021,7 +1166,7 @@ aside.side_menu.open {
     }
 
     .supject_banner {
-        height: 28vh;
+        height: 15vh;
     }
 
     .subject_all .subject_all_box .subject__all_box_content .subject__all_title {
@@ -1350,3 +1495,28 @@ aside.side_menu.open {
 /*---------- End Max Media 576px ----------*/
 
 /*---------------------------- End Media Quaries ------------------------*/
+
+.master_cat {
+    margin: 50px 0;
+}
+
+.master_cat .master_cat_box .master_cat_content {
+    background-color: var(--header);
+    padding: 7px;
+    color: var(--white);
+    font-size: 25px;
+    height: 90px;
+    transition: .7s ease-in-out;
+    -webkit-transition: .7s ease-in-out;
+    -moz-transition: .7s ease-in-out;
+    -ms-transition: .7s ease-in-out;
+    -o-transition: .7s ease-in-out;
+}
+
+.master_cat .master_cat_box .master_cat_content:hover {
+    background-color: #374050;
+}
+
+.master_cat .master_cat_box .master_cat_content svg {
+    font-size: 30px;
+}

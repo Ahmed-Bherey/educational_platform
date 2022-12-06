@@ -145,6 +145,30 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon green-1"></i>
+                        <p>
+                            الكتب الجامعية
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('bookDrive.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>اضافة تصنيف للكتب الجامعية</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('bookDriveFile.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>اضافة كتاب جامعى</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

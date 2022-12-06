@@ -2,35 +2,40 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\DriveFile;
+use App\Models\BookDrive;
 use Illuminate\Http\Request;
+use App\Models\BookDriveFile;
 use App\Http\Controllers\Controller;
-use App\Models\Drive;
 use Illuminate\Support\Facades\Auth;
 
-class DriveFileController extends Controller
+class BookDriveFileController extends Controller
 {
     //
     public function create()
     {
-        $drives = Drive::get();
-        $driveFiles = DriveFile::get();
-        return view('admin.pages.driveFiles.create', compact('driveFiles', 'drives'));
+        $bookDrives = BookDrive::get();
+        $bookDriveFiles = BookDriveFile::get();
+        return view('admin.pages.bookDriveFiles.create', compact('bookDriveFiles', 'bookDrives'));
     }
 
     public function store(Request $request)
     {
         $file = null;
         if (isset($request->file)) {
-            $file = $request->file->store('public/img/driveFiles');
+            $file = $request->file->store('public/img/bookDriveFiles');
         }
 
-        DriveFile::create([
+        $img = null;
+        if (isset($request->img)) {
+            $img = $request->img->store('public/img/bookDriveFiles');
+        }
+
+        BookDriveFile::create([
             'user_id' => Auth::user()->id,
-            'drive_id' => $request->drive_id,
+            'bookDrive_id' => $request->bookDrive_id,
             'date' => $request->date,
-            'file_type' => $request->file_type,
             'file' => $file,
+            'img' => $img,
             'name' => $request->name,
             'notes' => $request->notes,
         ]);
@@ -39,24 +44,29 @@ class DriveFileController extends Controller
 
     public function edit($id)
     {
-        $drives = Drive::get();
-        $driveFile = DriveFile::findOrFail($id);
-        return view('admin.pages.driveFiles.edit', compact('driveFile', 'drives'));
+        $bookDrives = BookDrive::get();
+        $bookDriveFile = BookDriveFile::findOrFail($id);
+        return view('admin.pages.bookDriveFiles.edit', compact('bookDriveFile', 'bookDrives'));
     }
 
     public function update(Request $request, $id)
     {
-        $driveFile = DriveFile::findOrFail($id);
-        $file = $driveFile->file;
+        $bookDriveFile = BookDriveFile::findOrFail($id);
+        $file = $bookDriveFile->file;
         if (isset($request->file)) {
             $file = $request->file->store('public/img/driveFiles');
         }
-        $driveFile->update([
+
+        $img = $bookDriveFile->img;
+        if (isset($request->img)) {
+            $img = $request->img->store('public/img/driveFiles');
+        }
+        $bookDriveFile->update([
             'user_id' => Auth::user()->id,
-            'drive_id' => $request->drive_id,
+            'bookDrive_id' => $request->bookDrive_id,
             'date' => $request->date,
-            'file_type' => $request->file_type,
             'file' => $file,
+            'img' => $img,
             'name' => $request->name,
             'notes' => $request->notes,
         ]);
@@ -65,8 +75,8 @@ class DriveFileController extends Controller
 
     public function destroy($id)
     {
-        $driveFile = DriveFile::findOrFail($id);
-        $driveFile->delete();
+        $bookDriveFile = BookDriveFile::findOrFail($id);
+        $bookDriveFile->delete();
         return redirect()->back()->with(['success' => "تم الحذف بنجاح"]);
     }
 }

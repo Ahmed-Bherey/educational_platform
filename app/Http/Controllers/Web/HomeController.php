@@ -13,13 +13,15 @@ use Illuminate\Http\Request;
 use App\Models\CategoryTotal;
 use App\Models\GeneralSetting;
 use App\Http\Controllers\Controller;
+use App\Models\BookDrive;
+use App\Models\BookDriveFile;
 use App\Models\Drive;
 use App\Models\DriveFile;
 
 class HomeController extends Controller
 {
     //
-    public function index()
+    public function eduPlatform()
     {
         $generalSetting = GeneralSetting::first();
         $subCategories = SubCategory::get();
@@ -31,7 +33,7 @@ class HomeController extends Controller
         $drives = Drive::get();
         $categoryFirst = Category::first();
         $subjects = Subject::take(10)->get();
-        return view('web.pages.home', compact('subjects', 'drives', 'categories', 'ad2s', 'ad3s', 'categoryFirst', 'ads', 'generalSetting', 'subCategories', 'categoriesAll'));
+        return view('web.pages.eduPlatform', compact('subjects', 'drives', 'categories', 'ad2s', 'ad3s', 'categoryFirst', 'ads', 'generalSetting', 'subCategories', 'categoriesAll'));
     }
 
     public function subjects($id)
@@ -149,5 +151,50 @@ class HomeController extends Controller
         $drive = Drive::get();
         $driveFile = DriveFile::findOrFail($id);
         return view('web.pages.driveFiles_content', compact('driveFile', 'drive', 'ads', 'ad2s', 'ad3s', 'categories', 'generalSetting'));
+    }
+
+    public function index()
+    {
+        $generalSetting = GeneralSetting::first();
+        $categories = Category::get();
+        $ads = Ad::first();
+        $ad2s = Ad2::first();
+        $ad3s = Ad3::first();
+        return view('web.pages.home', compact('generalSetting','categories','ads','ad2s','ad3s'));
+    }
+
+    public function bookDrive()
+    {
+        $generalSetting = GeneralSetting::first();
+        $categories = Category::get();
+        $ads = Ad::first();
+        $ad2s = Ad2::first();
+        $ad3s = Ad3::first();
+        $bookDrives = BookDrive::get();
+        return view('web.pages.bookDrives', compact('bookDrives', 'ads', 'ad2s', 'ad3s', 'categories', 'generalSetting'));
+    }
+
+    public function bookDriveFile($id)
+    {
+        $generalSetting = GeneralSetting::first();
+        $categories = Category::get();
+        $ads = Ad::first();
+        $ad2s = Ad2::first();
+        $ad3s = Ad3::first();
+        $bookDrive = BookDrive::findOrFail($id);
+        $bookDriveFiles = BookDriveFile::where('bookDrive_id',$id)->get();
+        return view('web.pages.bookDriveFiles', compact('bookDrive','bookDriveFiles', 'ads', 'ad2s', 'ad3s', 'categories', 'generalSetting'));
+    }
+
+    public function bookDriveFile_content($id)
+    {
+        $generalSetting = GeneralSetting::first();
+        $categories = Category::get();
+        $ads = Ad::first();
+        $ad2s = Ad2::first();
+        $ad3s = Ad3::first();
+        $drive = Drive::get();
+        $bookDriveFile = BookDriveFile::findOrFail($id);
+        return view('web.pages.bookDriveFile_content', compact('bookDriveFile', 'drive', 'ads', 'ad2s', 'ad3s', 'categories', 'generalSetting'));
     }
 }

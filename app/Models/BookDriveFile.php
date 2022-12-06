@@ -3,19 +3,19 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Drive;
+use App\Models\BookDrive;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class DriveFile extends Model
+class BookDriveFile extends Model
 {
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'drive_id',
+        'bookDrive_id',
         'date',
-        'file_type',
         'file',
+        'img',
         'name',
         'notes',
     ];
@@ -25,8 +25,8 @@ class DriveFile extends Model
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
-    public function drives()
+    public function book_drives()
     {
-        return $this->belongsTo(Drive::class, 'drive_id', 'id');
+        return $this->belongsTo(BookDrive::class, 'bookDrive_id', 'id');
     }
 }

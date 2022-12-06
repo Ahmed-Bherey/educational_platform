@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdController;
 use App\Http\Controllers\Admin\Ad2Controller;
 use App\Http\Controllers\Admin\Ad3Controller;
+use App\Http\Controllers\Admin\BookDriveController;
+use App\Http\Controllers\Admin\BookDriveFileController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -12,8 +14,7 @@ use App\Http\Controllers\Admin\DriveController;
 use App\Http\Controllers\Admin\DriveFileController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\GeneralSettingController;
-
-
+use App\Models\BookDrive;
 
 Route::middleware('adminAuth')->prefix('admin')->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -88,5 +89,21 @@ Route::middleware('adminAuth')->prefix('admin')->group(function(){
         Route::get('/{id}', 'edit')->name('driveFile.edit');
         Route::post('/{id}', 'update')->name('driveFile.update');
         Route::get('/destroy/{id}', 'destroy')->name('driveFile.destroy');
+    });
+    // اضافة مجلدات كتب جامعية 
+    Route::prefix('bookDrive')->controller(BookDriveController::class)->group(function(){
+        Route::get('/', 'create')->name('bookDrive.create');
+        Route::post('/', 'store')->name('bookDrive.store');
+        Route::get('/{id}', 'edit')->name('bookDrive.edit');
+        Route::post('/{id}', 'update')->name('bookDrive.update');
+        Route::get('/destroy/{id}', 'destroy')->name('bookDrive.destroy');
+    });
+    // اضافة كتاب جامعى 
+    Route::prefix('bookDriveFile')->controller(BookDriveFileController::class)->group(function(){
+        Route::get('/', 'create')->name('bookDriveFile.create');
+        Route::post('/', 'store')->name('bookDriveFile.store');
+        Route::get('/{id}', 'edit')->name('bookDriveFile.edit');
+        Route::post('/{id}', 'update')->name('bookDriveFile.update');
+        Route::get('/destroy/{id}', 'destroy')->name('bookDriveFile.destroy');
     });
 });
