@@ -26,22 +26,34 @@
                     <span>تواصل</span>
                 </h4>
                 <div class="box_content">
-                    <div class="tel"><i class="fa-solid fa-phone-flip"></i> <span>
-                            @isset($generalSetting->tel1)
+                    <div class="tel d-flex justify-content-center align-items-center">
+                        @isset($generalSetting->tel1)
+                            <div class="tel_icon">
+                                <i class="fa-solid fa-phone-flip"></i>
+                            </div>
+                            <div class="para">
                                 {{ $generalSetting->tel1 }}
-                            </span>
+                            </div>
                         @endisset
                     </div>
-                    <div class="tel"><i class="fa-solid fa-phone-flip"></i> <span>
-                            @isset($generalSetting->tel2)
-                                {{ $generalSetting->tel2 }}
-                            </span>
+                    <div class="tel d-flex justify-content-center align-items-center">
+                        @isset($generalSetting->tel1)
+                            <div class="tel_icon">
+                                <i class="fa-solid fa-phone-flip"></i>
+                            </div>
+                            <div class="para">
+                                {{ $generalSetting->tel1 }}
+                            </div>
                         @endisset
                     </div>
-                    <div class="tel"><i class="fa-solid fa-phone-flip"></i> <span>
-                            @isset($generalSetting->tel3)
-                                {{ $generalSetting->tel3 }}
-                            </span>
+                    <div class="tel d-flex justify-content-center align-items-center">
+                        @isset($generalSetting->tel1)
+                            <div class="tel_icon">
+                                <i class="fa-solid fa-phone-flip"></i>
+                            </div>
+                            <div class="para">
+                                {{ $generalSetting->tel1 }}
+                            </div>
                         @endisset
                     </div>
                 </div>
@@ -72,7 +84,7 @@
             class="text-decoration-none" target="blank">Ahmed Abdelwahab</a>
         </p> --}}
         <p class="text-center">
-            جميع الحقوق محفوظة &copy; <a href="https://api.whatsapp.com/send?phone={{$generalSetting->tel1}}"
+            جميع الحقوق محفوظة &copy; <a href="https://api.whatsapp.com/send?phone={{ $generalSetting->tel1 }}"
                 class="text-decoration-none" target="blank">Ai
                 Education</a>
         </p>

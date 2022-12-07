@@ -4,12 +4,12 @@
             <div class="menu_icon">
                 <i class="fa-solid fa-bars"></i>
             </div>
-            <div class="logo">
+            <a href="{{ route('web.index') }}" class="logo text-decoration-none">
                 Al-Education
-            </div>
+            </a>
             <ul>
                 <li><a href="{{ route('web.index') }}" class="navLink active">الرئيسية</a>
-            </li>
+                </li>
                 <li><a href="{{ url('/edu-platform/#categories') }}" class="navLink active">التصنيفات</a></li>
                 <li><a href="{{ route('web.subjectsAll') }}" class="navLink active">اخر التحديثات</a></li>
                 <li class="d-none"><input type="color" id="coloc_controller"></li>
@@ -31,9 +31,9 @@
             <div class="menu_icon">
                 <i class="fa-solid fa-bars"></i>
             </div>
-            <div class="logo">
+            <a href="{{ route('web.index') }}" class="logo text-decoration-none">
                 Al-Education
-            </div>
+            </a>
             <ul>
                 <li><a href="{{ route('web.index') }}">الرئيسية</a></li>
                 <li><a href="{{ url('/edu-platform/#categories') }}" class="navLink active">التصنيفات</a></li>

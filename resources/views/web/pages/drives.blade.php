@@ -1,6 +1,13 @@
 @extends('web.layouts.includes.main')
 @section('content')
     <div class="wrraber">
+        <section class="supject_banner">
+            <div class="container">
+                <div class="subject_head">
+                    <h1>منصة الأساتذة</h1>
+                </div>
+            </div>
+        </section>
         <div class="drives_page">
             <section class="drives">
                 <div class="container">

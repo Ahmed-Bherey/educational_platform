@@ -46,11 +46,12 @@
                     </ul>
                 </li> --}}
                 <li class="nav-item">
-                    <a href="{{route('generalSetting.create')}}" class="nav-link">
+                    <a href="{{ route('generalSetting.create') }}" class="nav-link">
                         <i class="far fa-circle nav-icon green-1"></i>
                         <p>بيانات المؤسسة</p>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon green-1"></i>
@@ -61,7 +62,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('users.create')}}" class="nav-link">
+                            <a href="{{ route('users.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon green-1"></i>
                                 <p>اضافة مستخدم</p>
                             </a>
@@ -74,70 +75,54 @@
                         </li> --}}
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('category.create')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon green-1"></i>
-                        <p>اضافة تصنيف</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('subCategory.create')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon green-1"></i>
-                        <p>اضافة تصنيف فرعى</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('subject.create')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon green-1"></i>
-                        <p>اضافة دروس</p>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon green-1"></i>
                         <p>
-                            اضافة اعلانات
+                            منصة الأولياء والتلاميذ
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('ads.create')}}" class="nav-link">
+                            <a href="{{ route('category.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon green-1"></i>
-                                <p>الاعلان الاول</p>
+                                <p>اضافة تصنيف</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('ad2s.create')}}" class="nav-link">
+                            <a href="{{ route('subCategory.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon green-1"></i>
-                                <p>الاعلان الثانى</p>
+                                <p>اضافة تصنيف فرعى</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('ad3s.create')}}" class="nav-link">
+                            <a href="{{ route('subject.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon green-1"></i>
-                                <p>الاعلان الثالث</p>
+                                <p>اضافة دروس</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon green-1"></i>
                         <p>
-                            المجلدات
+                            منصة الأساتذة
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('drives.create')}}" class="nav-link">
+                            <a href="{{ route('drives.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon green-1"></i>
                                 <p>اضافة مجلد</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('driveFile.create')}}" class="nav-link">
+                            <a href="{{ route('driveFile.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon green-1"></i>
                                 <p>اضافة ملف لمجلد</p>
                             </a>
@@ -149,19 +134,19 @@
                     <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon green-1"></i>
                         <p>
-                            الكتب الجامعية
+                            منصة الكتب الجماعية
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('bookDrive.create')}}" class="nav-link">
+                            <a href="{{ route('bookDrive.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon green-1"></i>
                                 <p>اضافة تصنيف للكتب الجامعية</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('bookDriveFile.create')}}" class="nav-link">
+                            <a href="{{ route('bookDriveFile.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon green-1"></i>
                                 <p>اضافة كتاب جامعى</p>
                             </a>
@@ -169,6 +154,35 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="far fa-circle nav-icon green-1"></i>
+                        <p>
+                            اضافة اعلانات
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('ads.create') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>الاعلان الاول</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('ad2s.create') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>الاعلان الثانى</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('ad3s.create') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon green-1"></i>
+                                <p>الاعلان الثالث</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

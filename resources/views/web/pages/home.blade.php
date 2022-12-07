@@ -1,4 +1,4 @@
-@extends('web.layouts.includes.master')
+@extends('web.layouts.includes.main')
 @section('content')
     @include('admin.layouts.alerts.success')
     @include('admin.layouts.alerts.error')
